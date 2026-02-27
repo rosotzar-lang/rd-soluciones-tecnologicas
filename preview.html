@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RD Soluciones Tecnológicas</title>
+  <meta name="description" content="RD Soluciones Tecnológicas: renta de equipo (workstations, desktops, AIO, laptops e impresoras) y servicios TI para empresas." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a30;
+      --text:#eaf0ff;
+      --muted:#a9b6d8;
+      --accent:#2f6bff;
+      --accent2:#00d1ff;
+      --line: rgba(255,255,255,.10);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--font); color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(47,107,255,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(0,209,255,.25), transparent 60%),
+        var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px;}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:14px 18px; border:1px solid var(--line); border-radius:999px; background:rgba(15,26,48,.65);
+      backdrop-filter: blur(10px);
+      position: sticky; top: 16px; z-index: 50;
+    }
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
+    .logo-dot{
+      width:12px; height:12px; border-radius:999px; background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 0 18px rgba(0,209,255,.55);
+    }
+    .links{display:flex; gap:18px; color:var(--muted); font-weight:700; font-size:14px}
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border-radius:999px; border:1px solid rgba(47,107,255,.35);
+      background:linear-gradient(135deg, rgba(47,107,255,.25), rgba(0,209,255,.15));
+      box-shadow: 0 10px 30px rgba(47,107,255,.18);
+      font-weight:800; font-size:14px;
+    }
+    .hero{
+      margin-top:18px; padding:54px 22px;
+      border:1px solid var(--line); border-radius:var(--radius); background:rgba(15,26,48,.55);
+      box-shadow:var(--shadow);
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:26px; align-items:center;
+    }
+    .kicker{color:var(--accent2); font-weight:900; letter-spacing:.18em; font-size:12px}
+    h1{margin:10px 0 10px; font-size:44px; line-height:1.05}
+    .sub{color:var(--muted); font-size:16px; line-height:1.6; max-width:60ch}
+    .hero-actions{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:12px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04); font-weight:900;
+    }
+    .btn.primary{
+      border-color:rgba(47,107,255,.45);
+      background:linear-gradient(135deg, rgba(47,107,255,.35), rgba(0,209,255,.18));
+    }
+    .panel{
+      border-radius:16px; border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(47,107,255,.20), rgba(15,26,48,.35));
+      padding:18px;
+    }
+    .metric{display:grid; gap:10px}
+    .metric b{font-size:22px}
+    .metric span{color:var(--muted); font-size:14px; line-height:1.4}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px}
+    .card{
+      border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.03);
+      padding:16px;
+    }
+    .card h3{margin:8px 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .section{
+      margin-top:18px; padding:22px; border:1px solid var(--line);
+      border-radius:var(--radius); background:rgba(15,26,48,.45)
+    }
+    .section h2{margin:0 0 12px; font-size:22px}
+    .cols{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    .list{display:grid; gap:10px}
+    .item{display:flex; gap:10px; padding:12px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.03)}
+    .badge{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, rgba(47,107,255,.35), rgba(0,209,255,.18));
+      border:1px solid rgba(255,255,255,.10);
+      display:flex; align-items:center; justify-content:center; font-weight:900;
+      flex: 0 0 auto;
+    }
+    .mini{color:var(--muted); font-size:13px; line-height:1.45}
+    form{display:grid; gap:10px}
+    input, textarea, select{
+      width:100%; padding:12px 12px; border-radius:12px; border:1px solid var(--line);
+      background:rgba(0,0,0,.18); color:var(--text); outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .foot{margin:18px 0 0; color:var(--muted); font-size:13px; text-align:center}
+
+    /* WhatsApp floating button */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(15,26,48,.80);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 50px rgba(0,0,0,.40);
+    }
+    .wa-icon{
+      width:36px; height:36px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(37,211,102,.25), rgba(0,209,255,.18));
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .wa-text{display:grid; line-height:1.1}
+    .wa-text b{font-size:13px}
+    .wa-text span{font-size:12px; color:var(--muted)}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr; padding:28px 18px}
+      h1{font-size:34px}
+      .grid3{grid-template-columns:1fr}
+      .cols{grid-template-columns:1fr}
+      .links{display:none}
+      .wa-text{display:none}
+      .wa-float{padding:10px}
+      .wa-icon{border-radius:999px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <span class="logo-dot"></span>
+        <span>RD Soluciones Tecnológicas</span>
+      </div>
+      <nav class="links">
+        <a href="#servicios">Servicios</a>
+        <a href="#renta">Renta de equipo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="cta" href="#contacto">Cotizar ahora →</a>
+    </header>
+
+    <main class="hero">
+      <div>
+        <div class="kicker">SOLUCIONES TI · RENTAL · SOPORTE</div>
+        <h1>Renta de equipo y tecnología para empresas.</h1>
+        <p class="sub">
+          Rentamos y administramos infraestructura: <b>workstations</b>, <b>desktops</b>, <b>All-in-One</b>, <b>laptops</b> e <b>impresoras</b>.
+          Además, implementamos redes, seguridad y soporte para operar sin interrupciones.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contacto">Solicitar cotización</a>
+          <a class="btn" href="#renta">Ver catálogo de renta</a>
+        </div>
+
+        <p class="mini" style="margin-top:14px;">
+          CDMX · Atención a PyME, corporativo y proyectos con requerimientos formales.
+        </p>
+      </div>
+
+      <aside class="panel">
+        <div class="metric">
+          <b>Entregables ejecutivos</b>
+          <span>Propuesta, alcance, inventario, entregas/recepciones y soporte documentado.</span>
+        </div>
+        <div class="grid3">
+          <div class="card">
+            <div class="badge">SLA</div>
+            <h3>Soporte</h3>
+            <p>Mesa de ayuda, remoto y en sitio (según contrato).</p>
+          </div>
+          <div class="card">
+            <div class="badge">TI</div>
+            <h3>Redes</h3>
+            <p>Wi-Fi empresarial, firewall, VPN y segmentación.</p>
+          </div>
+          <div class="card">
+            <div class="badge">REN</div>
+            <h3>Renta</h3>
+            <p>Equipo + mantenimiento + reemplazo por falla.</p>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="servicios" class="section">
+      <h2>Servicios</h2>
+      <div class="cols">
+        <div class="list">
+          <div class="item">
+            <div class="badge">1</div>
+            <div>
+              <b>Infraestructura TI</b>
+              <div class="mini">Diseño, implementación y documentación.</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="badge">2</div>
+            <div>
+              <b>Redes y Seguridad</b>
+              <div class="mini">Wi-Fi, firewall, VPN, políticas y hardening.</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="badge">3</div>
+            <div>
+              <b>Soporte y Mantenimiento</b>
+              <div class="mini">Preventivo/correctivo, inventario y monitoreo.</div>
+            </div>
+          </div>
+        </div>
+        <div class="list">
+          <div class="item">
+            <div class="badge">4</div>
+            <div>
+              <b>Implementación rápida</b>
+              <div class="mini">Entrega y puesta a punto (según stock y alcance).</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="badge">5</div>
+            <div>
+              <b>Estándares empresariales</b>
+              <div class="mini">Imágenes, perfiles, políticas, bitácoras.</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="badge">6</div>
+            <div>
+              <b>Proyectos formales</b>
+              <div class="mini">Propuesta, alcance, entregables y evidencias.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="renta" class="section">
+      <h2>Renta de equipo</h2>
+      <p class="mini" style="margin-top:-6px;">
+        Catálogo base (se ajusta por disponibilidad y requerimiento). Incluye configuración y soporte según plan.
+      </p>
+
+      <div class="grid3" style="margin-top:12px;">
+        <div class="card">
+          <h3>Workstations</h3>
+          <p>Para diseño, render, CAD, datos. (CPU alto, RAM ampliable, GPU dedicada).</p>
+        </div>
+        <div class="card">
+          <h3>Desktops</h3>
+          <p>Operación administrativa, CRM/ERP, uso general. Configuración estándar empresarial.</p>
+        </div>
+        <div class="card">
+          <h3>All-in-One (AIO)</h3>
+          <p>Escritorio limpio, ahorro de espacio, ideal para recepción y áreas administrativas.</p>
+        </div>
+        <div class="card">
+          <h3>Laptops</h3>
+          <p>Movilidad, ventas, trabajo híbrido. Políticas y seguridad por perfil.</p>
+        </div>
+        <div class="card">
+          <h3>Impresoras</h3>
+          <p>Monocromática / color, red, multifuncional. Suministros según acuerdo.</p>
+        </div>
+        <div class="card">
+          <h3>Incluye (típico)</h3>
+          <p>Instalación, configuración, soporte, reemplazo por falla (según contrato).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <h2>Contacto</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>Solicita una cotización</h3>
+          <p class="mini">Genera un mensaje listo para copiar y mandar por WhatsApp o correo.</p>
+
+          <form id="form">
+            <input name="nombre" placeholder="Tu nombre" required />
+            <input name="empresa" placeholder="Empresa (opcional)" />
+            <input name="correo" type="email" placeholder="Correo" required />
+            <input name="telefono" placeholder="Teléfono / WhatsApp (opcional)" />
+
+            <select name="tipo" required>
+              <option value="" disabled selected>¿Qué necesitas cotizar?</option>
+              <option>Renta de Workstations</option>
+              <option>Renta de Desktops</option>
+              <option>Renta de All-in-One (AIO)</option>
+              <option>Renta de Laptops</option>
+              <option>Renta de Impresoras</option>
+              <option>Proyecto / Servicios TI</option>
+            </select>
+
+            <textarea name="mensaje" placeholder="Detalles: cantidad, plazo (meses), ubicación, specs deseadas, soporte, etc." required></textarea>
+            <button class="btn primary" type="submit">Generar mensaje</button>
+          </form>
+
+          <p class="mini" id="out" style="margin-top:10px; white-space:pre-wrap;"></p>
+          <button class="btn" id="copyBtn" style="display:none; margin-top:10px;">Copiar mensaje</button>
+        </div>
+
+        <div class="card">
+          <h3>Datos (placeholders)</h3>
+          <p class="mini">
+            <b>Correo:</b> contacto@tudominio.com<br/>
+            <b>WhatsApp:</b> +52 55 0000 0000<br/>
+            <b>Zona:</b> CDMX<br/><br/>
+            <b>Horario:</b> Lun–Vie 9:00–18:00
+          </p>
+
+          <p class="mini" style="margin-top:12px;">
+            <b>Nota:</b> Cuando me pases tu número real, el botón flotante quedará listo para usarse.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">
+      © <span id="year"></span> RD Soluciones Tecnológicas · Aviso de privacidad · Términos
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Button (placeholder) -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener">
+    <div class="wa-icon" aria-hidden="true">WA</div>
+    <div class="wa-text">
+      <b>WhatsApp</b>
+      <span>Cotiza rápido</span>
+    </div>
+  </a>
+
+  <script>
+    // === CONFIG (placeholders) ===
+    const COMPANY_NAME = "RD Soluciones Tecnológicas";
+    const WHATSAPP_NUMBER_E164 = "+525500000000"; // <-- cambia a tu número real (ej: +525512345678)
+    const DEFAULT_WHATSAPP_TEXT = `Hola, me interesa una cotización con ${COMPANY_NAME}.`;
+
+    // === Helpers ===
+    const encode = (s) => encodeURIComponent(s);
+
+    function whatsappLink(text){
+      // wa.me requires digits only (no +, spaces)
+      const digits = (WHATSAPP_NUMBER_E164 || "").replace(/[^\d]/g,"");
+      // If still placeholder, keep link disabled
+      if(!digits || digits === "525500000000"){
+        return "#";
+      }
+      return `https://wa.me/${digits}?text=${encode(text)}`;
+    }
+
+    // === Floating button ===
+    const waFloat = document.getElementById("waFloat");
+    waFloat.href = whatsappLink(DEFAULT_WHATSAPP_TEXT);
+
+    // === Year ===
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // === Form => generate message + update WA link + copy button ===
+    const form = document.getElementById("form");
+    const out = document.getElementById("out");
+    const copyBtn = document.getElementById("copyBtn");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      const nombre = data.get("nombre");
+      const empresa = data.get("empresa");
+      const correo = data.get("correo");
+      const telefono = data.get("telefono");
+      const tipo = data.get("tipo");
+      const mensaje = data.get("mensaje");
+
+      const text =
+`Hola, soy ${nombre}${empresa ? " ("+empresa+")" : ""}.
+Me interesa una cotización con ${COMPANY_NAME}.
+
+Tipo: ${tipo}
+Correo: ${correo}
+Tel/WhatsApp: ${telefono || "N/A"}
+
+Detalles:
+${mensaje}`;
+
+      out.textContent = "Mensaje listo para copiar y enviar:\n\n" + text;
+      copyBtn.style.display = "inline-flex";
+
+      // Update floating WhatsApp to include this message
+      waFloat.href = whatsappLink(text);
+      if(waFloat.href === "#"){
+        waFloat.title = "Configura tu número real de WhatsApp en el archivo (WHATSAPP_NUMBER_E164).";
+      } else {
+        waFloat.title = "Abrir WhatsApp para enviar";
+      }
+    });
+
+    copyBtn.addEventListener("click", async () => {
+      try{
+        await navigator.clipboard.writeText(out.textContent.replace("Mensaje listo para copiar y enviar:\n\n",""));
+        copyBtn.textContent = "¡Copiado!";
+        setTimeout(()=> copyBtn.textContent = "Copiar mensaje", 1200);
+      }catch(err){
+        alert("No se pudo copiar automáticamente. Selecciona el texto y copia manualmente.");
+      }
+    });
+  </script>
+</body>
+</html>

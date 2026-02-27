@@ -3,108 +3,251 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RD Soluciones Tecnológicas</title>
-  <meta name="description" content="RD Soluciones Tecnológicas: renta de equipo (workstations, desktops, AIO, laptops e impresoras) y servicios TI para empresas." />
+  <title>RD Soluciones Tecnológicas | Renta de Equipo</title>
+  <meta name="description" content="Renta de equipo de cómputo e impresión para empresas: workstations, desktops, AIO, laptops e impresoras. Soporte y entrega en CDMX." />
+
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#0f1a30;
-      --text:#eaf0ff;
-      --muted:#a9b6d8;
-      --accent:#2f6bff;
-      --accent2:#00d1ff;
-      --line: rgba(255,255,255,.10);
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --bg:#ffffff;
+      --text:#0b1220;
+      --muted:#5b677a;
+      --line:#e7edf5;
+      --card:#f7f9fc;
+      --brand:#1f5eff;   /* azul corporativo */
+      --brand2:#00b3ff;  /* acento */
+      --shadow: 0 16px 40px rgba(16, 24, 40, .10);
       --radius: 18px;
-      --max: 1120px;
+      --max: 1160px;
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
     }
+
     *{box-sizing:border-box}
     body{
-      margin:0; font-family:var(--font); color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(47,107,255,.35), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(0,209,255,.25), transparent 60%),
-        var(--bg);
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 60%, #ffffff 100%);
     }
+
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:20px;}
+
+    /* Top bar */
+    .topbar{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      font-size:13px; color:var(--muted);
+      padding:8px 0 14px;
+      border-bottom:1px solid var(--line);
+    }
+    .topbar b{color:var(--text)}
+    .topbar .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px; border:1px solid var(--line); border-radius:999px;
+      background:#fff;
+    }
+
+    /* Nav */
     .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-      padding:14px 18px; border:1px solid var(--line); border-radius:999px; background:rgba(15,26,48,.65);
+      position: sticky; top: 0;
+      background: rgba(255,255,255,.86);
       backdrop-filter: blur(10px);
-      position: sticky; top: 16px; z-index: 50;
+      border-bottom: 1px solid var(--line);
+      z-index: 50;
     }
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
-    .logo-dot{
-      width:12px; height:12px; border-radius:999px; background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 0 18px rgba(0,209,255,.55);
+    .nav-inner{
+      max-width:var(--max); margin:0 auto; padding:12px 20px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
     }
-    .links{display:flex; gap:18px; color:var(--muted); font-weight:700; font-size:14px}
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800;
+    }
+    .brand img{height:44px; width:auto; display:block}
+    .menu{
+      display:flex; gap:18px; align-items:center;
+      font-weight:700; color:var(--muted); font-size:14px;
+    }
+    .menu a:hover{color:var(--text)}
     .cta{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px; border-radius:999px; border:1px solid rgba(47,107,255,.35);
-      background:linear-gradient(135deg, rgba(47,107,255,.25), rgba(0,209,255,.15));
-      box-shadow: 0 10px 30px rgba(47,107,255,.18);
-      font-weight:800; font-size:14px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid rgba(31,94,255,.25);
+      background: linear-gradient(135deg, rgba(31,94,255,.12), rgba(0,179,255,.10));
+      font-weight:900; font-size:14px;
+      box-shadow: 0 12px 30px rgba(31,94,255,.10);
     }
+
+    /* Hero */
     .hero{
-      margin-top:18px; padding:54px 22px;
-      border:1px solid var(--line); border-radius:var(--radius); background:rgba(15,26,48,.55);
-      box-shadow:var(--shadow);
-      display:grid; grid-template-columns: 1.2fr .8fr; gap:26px; align-items:center;
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
     }
-    .kicker{color:var(--accent2); font-weight:900; letter-spacing:.18em; font-size:12px}
-    h1{margin:10px 0 10px; font-size:44px; line-height:1.05}
-    .sub{color:var(--muted); font-size:16px; line-height:1.6; max-width:60ch}
-    .hero-actions{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+    .hero-left{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-weight:900; letter-spacing:.12em; font-size:12px;
+      color: var(--brand);
+      text-transform: uppercase;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+    h1{
+      margin:12px 0 10px;
+      font-size:42px;
+      line-height:1.05;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width: 64ch;
+    }
+    .hero-actions{
+      display:flex; flex-wrap:wrap; gap:12px;
+      margin-top:18px;
+    }
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:12px; border:1px solid var(--line);
-      background:rgba(255,255,255,.04); font-weight:900;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:900;
     }
     .btn.primary{
-      border-color:rgba(47,107,255,.45);
-      background:linear-gradient(135deg, rgba(47,107,255,.35), rgba(0,209,255,.18));
+      border-color: rgba(31,94,255,.25);
+      background: linear-gradient(135deg, rgba(31,94,255,.14), rgba(0,179,255,.10));
     }
-    .panel{
-      border-radius:16px; border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(47,107,255,.20), rgba(15,26,48,.35));
+
+    .hero-right{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: radial-gradient(900px 260px at 10% 0%, rgba(31,94,255,.12), transparent 60%),
+                  radial-gradient(800px 260px at 90% 0%, rgba(0,179,255,.10), transparent 60%),
+                  #fff;
+      box-shadow:var(--shadow);
       padding:18px;
+      display:grid;
+      grid-template-rows:auto 1fr;
+      gap:14px;
     }
-    .metric{display:grid; gap:10px}
-    .metric b{font-size:22px}
-    .metric span{color:var(--muted); font-size:14px; line-height:1.4}
-    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px}
-    .card{
-      border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.03);
-      padding:16px;
+
+    .mini-cards{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
     }
-    .card h3{margin:8px 0 6px; font-size:16px}
-    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .mini{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: #fff;
+      padding:14px;
+    }
+    .mini b{display:block; margin-bottom:6px}
+    .mini span{color:var(--muted); font-size:13px; line-height:1.45}
+
+    /* Sections */
     .section{
-      margin-top:18px; padding:22px; border:1px solid var(--line);
-      border-radius:var(--radius); background:rgba(15,26,48,.45)
+      margin-top:18px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      box-shadow: var(--shadow);
+      padding:22px;
     }
-    .section h2{margin:0 0 12px; font-size:22px}
-    .cols{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
-    .list{display:grid; gap:10px}
-    .item{display:flex; gap:10px; padding:12px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.03)}
-    .badge{
-      width:34px; height:34px; border-radius:12px;
-      background:linear-gradient(135deg, rgba(47,107,255,.35), rgba(0,209,255,.18));
-      border:1px solid rgba(255,255,255,.10);
-      display:flex; align-items:center; justify-content:center; font-weight:900;
-      flex: 0 0 auto;
+    .section h2{
+      margin:0 0 12px;
+      font-size:22px;
     }
-    .mini{color:var(--muted); font-size:13px; line-height:1.45}
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background: var(--card);
+      padding:16px;
+      min-height:140px;
+    }
+    .card h3{margin:6px 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    /* Catalog */
+    .catalog{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap:12px;
+    }
+    .product{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      padding:14px;
+    }
+    .product .icon{
+      width:44px; height:44px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(31,94,255,.16), rgba(0,179,255,.10));
+      border:1px solid rgba(31,94,255,.18);
+      font-weight:900;
+      color:var(--brand);
+    }
+    .product h3{margin:10px 0 6px; font-size:15px}
+    .product p{margin:0; color:var(--muted); font-size:13px; line-height:1.45}
+
+    /* Contact */
+    .cols{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:start;
+    }
     form{display:grid; gap:10px}
     input, textarea, select{
-      width:100%; padding:12px 12px; border-radius:12px; border:1px solid var(--line);
-      background:rgba(0,0,0,.18); color:var(--text); outline:none;
+      width:100%;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      outline:none;
+      font-family:inherit;
+      font-size:14px;
     }
     textarea{min-height:120px; resize:vertical}
-    .foot{margin:18px 0 0; color:var(--muted); font-size:13px; text-align:center}
+    .note{color:var(--muted); font-size:13px; line-height:1.5}
+
+    .footer{
+      margin:18px 0 0;
+      padding:18px 0 8px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
 
     /* WhatsApp floating button */
     .wa-float{
@@ -117,184 +260,205 @@
       gap:10px;
       padding:12px 14px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(15,26,48,.80);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 18px 50px rgba(0,0,0,.40);
+      border:1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow);
     }
-    .wa-icon{
-      width:36px; height:36px; border-radius:12px;
+    .wa-dot{
+      width:38px; height:38px; border-radius:14px;
       display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(135deg, rgba(37,211,102,.25), rgba(0,209,255,.18));
-      border:1px solid rgba(255,255,255,.12);
+      font-weight:900;
+      background: linear-gradient(135deg, rgba(37,211,102,.18), rgba(0,179,255,.10));
+      border:1px solid rgba(37,211,102,.20);
     }
-    .wa-text{display:grid; line-height:1.1}
-    .wa-text b{font-size:13px}
-    .wa-text span{font-size:12px; color:var(--muted)}
+    .wa-float b{font-size:13px}
+    .wa-float span{font-size:12px; color:var(--muted)}
+    .wa-text{display:grid; line-height:1.05}
 
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr; padding:28px 18px}
-      h1{font-size:34px}
+    /* Responsive */
+    @media (max-width: 1020px){
+      .hero{grid-template-columns:1fr}
+      .catalog{grid-template-columns: repeat(2, 1fr);}
       .grid3{grid-template-columns:1fr}
       .cols{grid-template-columns:1fr}
-      .links{display:none}
+      h1{font-size:34px}
+      .menu{display:none}
+      .mini-cards{grid-template-columns:1fr}
+      .brand img{height:40px}
       .wa-text{display:none}
       .wa-float{padding:10px}
-      .wa-icon{border-radius:999px}
+      .wa-dot{border-radius:999px}
     }
   </style>
 </head>
+
 <body>
+
   <div class="wrap">
-    <header class="nav">
+    <div class="topbar">
+      <div class="pill"><b>CDMX</b> · Entrega y soporte empresarial</div>
+      <div class="pill">Correo: <b>contacto@tudominio.com</b> · WhatsApp: <b>+52 55 0000 0000</b></div>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
       <div class="brand">
-        <span class="logo-dot"></span>
-        <span>RD Soluciones Tecnológicas</span>
+        <img src="assets/logo.png" alt="RD Soluciones Tecnológicas" />
       </div>
-      <nav class="links">
+
+      <nav class="menu">
         <a href="#servicios">Servicios</a>
-        <a href="#renta">Renta de equipo</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#proceso">Proceso</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a class="cta" href="#contacto">Cotizar ahora →</a>
-    </header>
 
-    <main class="hero">
-      <div>
-        <div class="kicker">SOLUCIONES TI · RENTAL · SOPORTE</div>
-        <h1>Renta de equipo y tecnología para empresas.</h1>
+      <a class="cta" href="#contacto">Cotizar ahora →</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-left">
+        <div class="kicker"><span class="dot"></span> RENTA DE EQUIPO · SOLUCIONES TI</div>
+        <h1>Renta de equipo de cómputo e impresión para empresas.</h1>
         <p class="sub">
-          Rentamos y administramos infraestructura: <b>workstations</b>, <b>desktops</b>, <b>All-in-One</b>, <b>laptops</b> e <b>impresoras</b>.
-          Además, implementamos redes, seguridad y soporte para operar sin interrupciones.
+          Rentamos <b>workstations</b>, <b>desktops</b>, <b>All-in-One</b>, <b>laptops</b> e <b>impresoras</b>.
+          Incluye configuración y soporte según plan. Atención para PyME, corporativo y proyectos formales.
         </p>
 
         <div class="hero-actions">
           <a class="btn primary" href="#contacto">Solicitar cotización</a>
-          <a class="btn" href="#renta">Ver catálogo de renta</a>
+          <a class="btn" href="#catalogo">Ver catálogo</a>
+          <a class="btn" href="#servicios">Servicios TI</a>
         </div>
 
-        <p class="mini" style="margin-top:14px;">
-          CDMX · Atención a PyME, corporativo y proyectos con requerimientos formales.
-        </p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <span class="tag">✔ Entrega rápida</span>
+          <span class="tag">✔ Soporte remoto / sitio</span>
+          <span class="tag">✔ Documentación ejecutiva</span>
+        </div>
       </div>
 
-      <aside class="panel">
-        <div class="metric">
-          <b>Entregables ejecutivos</b>
-          <span>Propuesta, alcance, inventario, entregas/recepciones y soporte documentado.</span>
+      <aside class="hero-right">
+        <div>
+          <b style="font-size:16px;">Beneficios clave</b>
+          <p class="note" style="margin:8px 0 0;">
+            Menos inversión inicial, equipos estandarizados, continuidad operativa y soporte documentado.
+          </p>
         </div>
-        <div class="grid3">
-          <div class="card">
-            <div class="badge">SLA</div>
-            <h3>Soporte</h3>
-            <p>Mesa de ayuda, remoto y en sitio (según contrato).</p>
+        <div class="mini-cards">
+          <div class="mini">
+            <b>Arrendamiento empresarial</b>
+            <span>Contratos por plazo, inventario, entrega/recepción y renovaciones.</span>
           </div>
-          <div class="card">
-            <div class="badge">TI</div>
-            <h3>Redes</h3>
-            <p>Wi-Fi empresarial, firewall, VPN y segmentación.</p>
+          <div class="mini">
+            <b>Soporte (SLA)</b>
+            <span>Mesa de ayuda, remoto y en sitio (según plan contratado).</span>
           </div>
-          <div class="card">
-            <div class="badge">REN</div>
-            <h3>Renta</h3>
-            <p>Equipo + mantenimiento + reemplazo por falla.</p>
+          <div class="mini">
+            <b>Seguridad y políticas</b>
+            <span>Perfiles, hardening, cuentas, restricciones y buenas prácticas.</span>
+          </div>
+          <div class="mini">
+            <b>Proyectos formales</b>
+            <span>Alcance, evidencias, reportes y entregables ejecutivos.</span>
           </div>
         </div>
       </aside>
-    </main>
+    </section>
 
-    <section id="servicios" class="section">
+    <!-- SERVICIOS -->
+    <section class="section" id="servicios">
       <h2>Servicios</h2>
-      <div class="cols">
-        <div class="list">
-          <div class="item">
-            <div class="badge">1</div>
-            <div>
-              <b>Infraestructura TI</b>
-              <div class="mini">Diseño, implementación y documentación.</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="badge">2</div>
-            <div>
-              <b>Redes y Seguridad</b>
-              <div class="mini">Wi-Fi, firewall, VPN, políticas y hardening.</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="badge">3</div>
-            <div>
-              <b>Soporte y Mantenimiento</b>
-              <div class="mini">Preventivo/correctivo, inventario y monitoreo.</div>
-            </div>
-          </div>
+      <div class="grid3">
+        <div class="card">
+          <span class="tag">Infraestructura TI</span>
+          <h3>Implementación y soporte</h3>
+          <p>Instalación, configuración, estandarización e inventario TI para operación continua.</p>
         </div>
-        <div class="list">
-          <div class="item">
-            <div class="badge">4</div>
-            <div>
-              <b>Implementación rápida</b>
-              <div class="mini">Entrega y puesta a punto (según stock y alcance).</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="badge">5</div>
-            <div>
-              <b>Estándares empresariales</b>
-              <div class="mini">Imágenes, perfiles, políticas, bitácoras.</div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="badge">6</div>
-            <div>
-              <b>Proyectos formales</b>
-              <div class="mini">Propuesta, alcance, entregables y evidencias.</div>
-            </div>
-          </div>
+        <div class="card">
+          <span class="tag">Redes & Seguridad</span>
+          <h3>Wi-Fi, Firewall y VPN</h3>
+          <p>Segmentación, políticas, acceso seguro, monitoreo y mejores prácticas empresariales.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Arrendamiento</span>
+          <h3>Renta de equipo</h3>
+          <p>Equipos para operación, reemplazo por falla (según contrato), soporte y mantenimiento.</p>
         </div>
       </div>
     </section>
 
-    <section id="renta" class="section">
-      <h2>Renta de equipo</h2>
-      <p class="mini" style="margin-top:-6px;">
-        Catálogo base (se ajusta por disponibilidad y requerimiento). Incluye configuración y soporte según plan.
+    <!-- CATÁLOGO -->
+    <section class="section" id="catalogo">
+      <h2>Catálogo de renta</h2>
+      <p class="note" style="margin-top:-6px;">
+        Catálogo base (se ajusta por disponibilidad y requerimiento). Si quieres, agregamos “desde $___/mes”.
       </p>
 
-      <div class="grid3" style="margin-top:12px;">
-        <div class="card">
+      <div class="catalog" style="margin-top:12px;">
+        <div class="product">
+          <div class="icon">WS</div>
           <h3>Workstations</h3>
-          <p>Para diseño, render, CAD, datos. (CPU alto, RAM ampliable, GPU dedicada).</p>
+          <p>Diseño, CAD, datos, GPU dedicada y RAM ampliable.</p>
         </div>
-        <div class="card">
+        <div class="product">
+          <div class="icon">PC</div>
           <h3>Desktops</h3>
-          <p>Operación administrativa, CRM/ERP, uso general. Configuración estándar empresarial.</p>
+          <p>Administración, ERP/CRM, uso general y estandarización.</p>
         </div>
-        <div class="card">
-          <h3>All-in-One (AIO)</h3>
-          <p>Escritorio limpio, ahorro de espacio, ideal para recepción y áreas administrativas.</p>
+        <div class="product">
+          <div class="icon">AIO</div>
+          <h3>All-in-One</h3>
+          <p>Recepción y áreas administrativas, imagen limpia.</p>
         </div>
-        <div class="card">
+        <div class="product">
+          <div class="icon">NB</div>
           <h3>Laptops</h3>
-          <p>Movilidad, ventas, trabajo híbrido. Políticas y seguridad por perfil.</p>
+          <p>Movilidad, ventas, híbrido, seguridad por perfil.</p>
         </div>
-        <div class="card">
+        <div class="product">
+          <div class="icon">PR</div>
           <h3>Impresoras</h3>
-          <p>Monocromática / color, red, multifuncional. Suministros según acuerdo.</p>
-        </div>
-        <div class="card">
-          <h3>Incluye (típico)</h3>
-          <p>Instalación, configuración, soporte, reemplazo por falla (según contrato).</p>
+          <p>Mono/color, red, multifuncional. Suministros según acuerdo.</p>
         </div>
       </div>
     </section>
 
-    <section id="contacto" class="section">
-      <h2>Contacto</h2>
-      <div class="cols">
+    <!-- PROCESO -->
+    <section class="section" id="proceso">
+      <h2>Proceso</h2>
+      <div class="grid3">
         <div class="card">
-          <h3>Solicita una cotización</h3>
-          <p class="mini">Genera un mensaje listo para copiar y mandar por WhatsApp o correo.</p>
+          <span class="tag">Paso 1</span>
+          <h3>Levantamiento</h3>
+          <p>Cantidad, uso, plazo, ubicación, políticas y soporte requerido.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Paso 2</span>
+          <h3>Propuesta</h3>
+          <p>Alcance, equipos, SLA, entregables y calendario de implementación.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Paso 3</span>
+          <h3>Entrega & Soporte</h3>
+          <p>Entrega/recepción, documentación, mesa de ayuda y continuidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+      <h2>Contacto</h2>
+
+      <div class="cols">
+        <div class="card" style="background:#fff;">
+          <h3 style="margin-top:0;">Solicita una cotización</h3>
+          <p class="note">Genera un mensaje listo para WhatsApp o correo.</p>
 
           <form id="form">
             <input name="nombre" placeholder="Tu nombre" required />
@@ -316,34 +480,37 @@
             <button class="btn primary" type="submit">Generar mensaje</button>
           </form>
 
-          <p class="mini" id="out" style="margin-top:10px; white-space:pre-wrap;"></p>
+          <p class="note" id="out" style="margin-top:12px; white-space:pre-wrap;"></p>
           <button class="btn" id="copyBtn" style="display:none; margin-top:10px;">Copiar mensaje</button>
         </div>
 
-        <div class="card">
-          <h3>Datos (placeholders)</h3>
-          <p class="mini">
+        <div class="card" style="background:#fff;">
+          <h3 style="margin-top:0;">Datos (placeholders)</h3>
+          <p class="note">
             <b>Correo:</b> contacto@tudominio.com<br/>
             <b>WhatsApp:</b> +52 55 0000 0000<br/>
-            <b>Zona:</b> CDMX<br/><br/>
+            <b>Zona:</b> CDMX<br/>
             <b>Horario:</b> Lun–Vie 9:00–18:00
           </p>
 
-          <p class="mini" style="margin-top:12px;">
-            <b>Nota:</b> Cuando me pases tu número real, el botón flotante quedará listo para usarse.
-          </p>
+          <div style="margin-top:14px; padding:14px; border:1px solid var(--line); border-radius:16px; background:var(--card);">
+            <b>Tip</b>
+            <p class="note" style="margin:6px 0 0;">
+              Cuando me pases tu número real, el botón flotante de WhatsApp queda listo y el mensaje se llena automático.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="foot">
-      © <span id="year"></span> RD Soluciones Tecnológicas · Aviso de privacidad · Términos
+    <div class="footer">
+      © <span id="year"></span> RD Soluciones Tecnológicas · Todos los derechos reservados
     </div>
   </div>
 
-  <!-- WhatsApp Floating Button (placeholder) -->
+  <!-- WhatsApp flotante (placeholder) -->
   <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener">
-    <div class="wa-icon" aria-hidden="true">WA</div>
+    <div class="wa-dot" aria-hidden="true">WA</div>
     <div class="wa-text">
       <b>WhatsApp</b>
       <span>Cotiza rápido</span>
@@ -354,29 +521,23 @@
     // === CONFIG (placeholders) ===
     const COMPANY_NAME = "RD Soluciones Tecnológicas";
     const WHATSAPP_NUMBER_E164 = "+525500000000"; // <-- cambia a tu número real (ej: +525512345678)
-    const DEFAULT_WHATSAPP_TEXT = `Hola, me interesa una cotización con ${COMPANY_NAME}.`;
 
-    // === Helpers ===
     const encode = (s) => encodeURIComponent(s);
 
     function whatsappLink(text){
-      // wa.me requires digits only (no +, spaces)
       const digits = (WHATSAPP_NUMBER_E164 || "").replace(/[^\d]/g,"");
-      // If still placeholder, keep link disabled
-      if(!digits || digits === "525500000000"){
-        return "#";
-      }
+      if(!digits || digits === "525500000000") return "#";
       return `https://wa.me/${digits}?text=${encode(text)}`;
     }
 
-    // === Floating button ===
-    const waFloat = document.getElementById("waFloat");
-    waFloat.href = whatsappLink(DEFAULT_WHATSAPP_TEXT);
-
-    // === Year ===
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // === Form => generate message + update WA link + copy button ===
+    // Floating WA
+    const waFloat = document.getElementById("waFloat");
+    waFloat.href = whatsappLink(`Hola, me interesa una cotización con ${COMPANY_NAME}.`);
+
+    // Form -> message
     const form = document.getElementById("form");
     const out = document.getElementById("out");
     const copyBtn = document.getElementById("copyBtn");
@@ -406,21 +567,19 @@ ${mensaje}`;
       out.textContent = "Mensaje listo para copiar y enviar:\n\n" + text;
       copyBtn.style.display = "inline-flex";
 
-      // Update floating WhatsApp to include this message
       waFloat.href = whatsappLink(text);
-      if(waFloat.href === "#"){
-        waFloat.title = "Configura tu número real de WhatsApp en el archivo (WHATSAPP_NUMBER_E164).";
-      } else {
-        waFloat.title = "Abrir WhatsApp para enviar";
-      }
+      waFloat.title = (waFloat.href === "#")
+        ? "Configura tu número real de WhatsApp (WHATSAPP_NUMBER_E164) en el index.html."
+        : "Abrir WhatsApp para enviar";
     });
 
     copyBtn.addEventListener("click", async () => {
       try{
-        await navigator.clipboard.writeText(out.textContent.replace("Mensaje listo para copiar y enviar:\n\n",""));
+        const clean = out.textContent.replace("Mensaje listo para copiar y enviar:\n\n","");
+        await navigator.clipboard.writeText(clean);
         copyBtn.textContent = "¡Copiado!";
         setTimeout(()=> copyBtn.textContent = "Copiar mensaje", 1200);
-      }catch(err){
+      }catch{
         alert("No se pudo copiar automáticamente. Selecciona el texto y copia manualmente.");
       }
     });

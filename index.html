@@ -1,311 +1,392 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RD Soluciones Tecnológicas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RD Soluciones Tecnológicas</title>
 
-<link rel="icon" href="Logo Soluciones Tecnologicas.png">
+  <!-- Favicon (icono del navegador) -->
+  <link rel="icon" href="logo.png">
 
-<style>
+  <style>
+    /* ===== BASE ===== */
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#ffffff;
+      color:#0b1220;
+    }
 
-/* ===== BASE ===== */
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background:#ffffff;
-  color:#0b1220;
-}
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
 
-.container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-}
+    h1,h2,h3{margin:0}
 
-h1,h2,h3{margin:0}
+    /* ===== NAV ===== */
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
 
-/* ===== NAV ===== */
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 0;
-}
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo img{
+      height:48px;
+      width:auto;
+      display:block;
+    }
+    .logo strong{
+      font-size:18px;
+      letter-spacing:.2px;
+    }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+    .navBtn{
+      background:#0b5cff;
+      color:#fff;
+      border:none;
+      padding:12px 25px;
+      border-radius:30px;
+      cursor:pointer;
+      font-weight:700;
+      box-shadow:0 10px 25px rgba(11,92,255,.25);
+      transition:.3s;
+    }
+    .navBtn:hover{ background:#256dff; }
 
-.logo img{
-  height:50px;
-}
+    /* ===== HERO ===== */
+    .hero{
+      padding:85px 0 45px;
+      text-align:center;
+    }
+    .hero h1{
+      font-size:42px;
+      margin-bottom:14px;
+    }
+    .hero p{
+      color:#5b6475;
+      font-size:18px;
+      max-width:750px;
+      margin:auto;
+    }
 
-.navBtn{
-  background:#0b5cff;
-  color:#fff;
-  border:none;
-  padding:12px 25px;
-  border-radius:30px;
-  cursor:pointer;
-  font-weight:700;
-  box-shadow:0 10px 25px rgba(11,92,255,.25);
-  transition:.3s;
-}
+    /* ===== SERVICIOS ===== */
+    .services{
+      padding:45px 0 80px;
+    }
+    .services h2{
+      text-align:center;
+      margin-bottom:45px;
+      font-size:26px;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:22px;
+    }
+    .card{
+      border:1px solid #e8edf5;
+      padding:28px;
+      border-radius:20px;
+      text-align:center;
+      transition:.3s;
+      background:#fff;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
+      border-color: rgba(11,92,255,.25);
+    }
+    .card h3{
+      margin-bottom:12px;
+      color:#0b5cff;
+      font-size:18px;
+    }
+    .card p{
+      margin:0;
+      color:#2a3345;
+    }
 
-.navBtn:hover{
-  background:#256dff;
-}
+    /* ===== WHATSAPP ===== */
+    .whatsapp{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:55px;
+      height:55px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:26px;
+      color:white;
+      text-decoration:none;
+      box-shadow:0 15px 30px rgba(0,0,0,.2);
+      z-index:998;
+    }
+    .whatsapp:hover{ transform: translateY(-2px); }
 
-/* ===== HERO ===== */
-.hero{
-  padding:90px 0;
-  text-align:center;
-}
+    /* ===== MODAL ===== */
+    .modalOverlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      z-index:999;
+    }
+    .modalOverlay.show{display:flex;}
 
-.hero h1{
-  font-size:42px;
-  margin-bottom:15px;
-}
+    .modal{
+      background:#ffffff;
+      width:100%;
+      max-width:900px;
+      border-radius:25px;
+      padding:34px;
+      animation:fadeIn .25s ease;
+      box-shadow: 0 30px 80px rgba(0,0,0,.20);
+    }
 
-.hero p{
-  color:#5b6475;
-  font-size:18px;
-  max-width:700px;
-  margin:auto;
-}
+    @keyframes fadeIn{
+      from{transform:translateY(15px);opacity:0}
+      to{transform:translateY(0);opacity:1}
+    }
 
-/* ===== SERVICIOS ===== */
-.services{
-  padding:70px 0;
-}
+    .modalHeader{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:22px;
+    }
+    .modalHeader h3{
+      font-size:22px;
+    }
+    .modalHeader .sub{
+      margin:6px 0 0;
+      color:#5b6475;
+      font-weight:600;
+      font-size:14px;
+    }
+    .modalHeader button{
+      border:none;
+      background:none;
+      font-size:22px;
+      cursor:pointer;
+      line-height:1;
+      padding:6px 8px;
+    }
 
-.services h2{
-  text-align:center;
-  margin-bottom:50px;
-}
+    .quoteForm{
+      display:grid;
+      gap:16px;
+    }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
+    .qInput{
+      padding:16px;
+      border-radius:30px;
+      border:1px solid #e8edf5;
+      background:#f4f7ff;
+      font-size:14px;
+      outline:none;
+      width:100%;
+      box-sizing:border-box;
+    }
+    .qInput:focus{
+      border-color:#0b5cff;
+      background:#fff;
+      box-shadow: 0 0 0 4px rgba(11,92,255,.10);
+    }
 
-.card{
-  border:1px solid #e8edf5;
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  transition:.3s;
-}
+    .qRow{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
 
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
-}
+    .qText{
+      border-radius:20px;
+      min-height:140px;
+      resize:vertical;
+    }
 
-.card h3{
-  margin-bottom:12px;
-  color:#0b5cff;
-}
+    .qBtn{
+      background:#0b5cff;
+      color:#fff;
+      padding:16px;
+      border:none;
+      border-radius:999px;
+      font-weight:800;
+      cursor:pointer;
+      transition:.3s;
+    }
+    .qBtn:hover{
+      background:#256dff;
+      transform: translateY(-1px);
+    }
 
-/* ===== WHATSAPP ===== */
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:55px;
-  height:55px;
-  background:#25D366;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:26px;
-  color:white;
-  text-decoration:none;
-  box-shadow:0 15px 30px rgba(0,0,0,.2);
-}
+    .status{
+      margin:0;
+      font-size:13px;
+      font-weight:700;
+      color:#5b6475;
+      min-height:18px;
+    }
 
-/* ===== MODAL ===== */
-.modalOverlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.55);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  z-index:999;
-}
-
-.modalOverlay.show{display:flex;}
-
-.modal{
-  background:#ffffff;
-  width:100%;
-  max-width:850px;
-  border-radius:25px;
-  padding:35px;
-  animation:fadeIn .3s ease;
-}
-
-@keyframes fadeIn{
-  from{transform:translateY(15px);opacity:0}
-  to{transform:translateY(0);opacity:1}
-}
-
-.modalHeader{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:25px;
-}
-
-.modalHeader button{
-  border:none;
-  background:none;
-  font-size:22px;
-  cursor:pointer;
-}
-
-.quoteForm{
-  display:grid;
-  gap:18px;
-}
-
-.qInput{
-  padding:16px;
-  border-radius:30px;
-  border:1px solid #e8edf5;
-  background:#f4f7ff;
-  font-size:14px;
-  outline:none;
-}
-
-.qInput:focus{
-  border-color:#0b5cff;
-  background:#fff;
-}
-
-.qRow{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.qText{
-  border-radius:20px;
-  min-height:130px;
-  resize:vertical;
-}
-
-.qBtn{
-  background:#0b5cff;
-  color:#fff;
-  padding:16px;
-  border:none;
-  border-radius:30px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.qBtn:hover{
-  background:#256dff;
-}
-
-@media(max-width:700px){
-  .qRow{grid-template-columns:1fr;}
-  .hero h1{font-size:28px;}
-}
-
-</style>
+    @media(max-width:750px){
+      .qRow{grid-template-columns:1fr;}
+      .hero h1{font-size:28px;}
+      .logo strong{display:none;} /* en móvil solo logo */
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<nav>
-  <div class="logo">
-    <img src="Logo Soluciones Tecnologicas.png" alt="RD Soluciones Tecnológicas">
-  </div>
-  <button class="navBtn" id="openQuote">Cotizar</button>
-</nav>
-
-<section class="hero">
-  <h1>Soluciones Tecnológicas Empresariales</h1>
-  <p>Infraestructura, seguridad, soporte y tecnología confiable para empresas que buscan estabilidad, orden y crecimiento.</p>
-</section>
-
-<section class="services">
-  <h2>Servicios</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Soporte TI</h3>
-      <p>Mantenimiento y atención empresarial profesional.</p>
-    </div>
-    <div class="card">
-      <h3>Redes</h3>
-      <p>Instalación, configuración y seguridad avanzada.</p>
-    </div>
-    <div class="card">
-      <h3>Seguridad</h3>
-      <p>Firewalls, control de accesos y protección empresarial.</p>
-    </div>
-  </div>
-</section>
-
-</div>
-
-<a class="whatsapp" href="https://wa.me/5215500000000" target="_blank">💬</a>
-
-<div class="modalOverlay" id="quoteOverlay">
-  <div class="modal">
-    <div class="modalHeader">
-      <h3>Cotización</h3>
-      <button id="closeQuote">✕</button>
-    </div>
-
-    <form class="quoteForm">
-      <input class="qInput" type="text" placeholder="Nombre" required>
-
-      <div class="qRow">
-        <input class="qInput" type="email" placeholder="Correo electrónico" required>
-        <input class="qInput" type="tel" placeholder="Teléfono" required>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="RD Soluciones Tecnológicas">
+        <strong>RD Soluciones Tecnológicas</strong>
       </div>
 
-      <div class="qRow">
-        <select class="qInput" required>
-          <option value="">Servicio de interés</option>
-          <option>Soporte TI</option>
-          <option>Redes</option>
-          <option>Seguridad</option>
-        </select>
-        <input class="qInput" type="date">
+      <button class="navBtn" id="openQuote">Cotizar</button>
+    </nav>
+
+    <section class="hero">
+      <h1>Soluciones Tecnológicas Empresariales</h1>
+      <p>Infraestructura, seguridad, soporte y <b>renta de equipo de cómputo</b> para empresas que buscan estabilidad, orden y crecimiento.</p>
+    </section>
+
+    <section class="services">
+      <h2>Servicios</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Soporte TI</h3>
+          <p>Mantenimiento y atención empresarial profesional.</p>
+        </div>
+
+        <div class="card">
+          <h3>Redes</h3>
+          <p>Instalación, configuración y seguridad avanzada.</p>
+        </div>
+
+        <div class="card">
+          <h3>Seguridad</h3>
+          <p>Firewalls, control de accesos y protección empresarial.</p>
+        </div>
+
+        <div class="card">
+          <h3>Renta de equipo de cómputo</h3>
+          <p>Equipos para empresas: laptops/PC, mantenimiento y reemplazo opcional.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- WhatsApp: cambia el número -->
+  <a class="whatsapp"
+     href="https://wa.me/5215500000000?text=Hola%20RD%20Soluciones%20Tecnol%C3%B3gicas%2C%20me%20interesa%20una%20cotizaci%C3%B3n."
+     target="_blank"
+     title="WhatsApp">💬</a>
+
+  <!-- Modal -->
+  <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modalHeader">
+        <div>
+          <h3>Cotización</h3>
+          <p class="sub">Déjanos tus datos y te enviamos una propuesta clara.</p>
+        </div>
+        <button id="closeQuote" aria-label="Cerrar">✕</button>
       </div>
 
-      <textarea class="qInput qText" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
+      <form class="quoteForm" id="quoteForm">
+        <input class="qInput" type="text" name="nombre" placeholder="Nombre" required>
 
-      <button class="qBtn" type="submit">Enviar cotización</button>
-    </form>
+        <div class="qRow">
+          <input class="qInput" type="email" name="correo" placeholder="Correo electrónico" required>
+          <input class="qInput" type="tel" name="telefono" placeholder="Teléfono" required>
+        </div>
+
+        <div class="qRow">
+          <select class="qInput" name="servicio" required>
+            <option value="">Servicio de interés</option>
+            <option selected>Renta de equipo de cómputo</option>
+            <option>Soporte TI</option>
+            <option>Redes</option>
+            <option>Seguridad</option>
+          </select>
+
+          <input class="qInput" type="date" name="fecha">
+        </div>
+
+        <textarea class="qInput qText" name="mensaje" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
+
+        <button class="qBtn" type="submit">Enviar cotización</button>
+        <p class="status" id="status"></p>
+      </form>
+    </div>
   </div>
-</div>
 
-<script>
-const openBtn = document.getElementById('openQuote');
-const closeBtn = document.getElementById('closeQuote');
-const overlay = document.getElementById('quoteOverlay');
+  <script>
+    const openBtn = document.getElementById('openQuote');
+    const closeBtn = document.getElementById('closeQuote');
+    const overlay = document.getElementById('quoteOverlay');
 
-openBtn.addEventListener('click',()=>overlay.classList.add('show'));
-closeBtn.addEventListener('click',()=>overlay.classList.remove('show'));
-overlay.addEventListener('click',(e)=>{
-  if(e.target===overlay) overlay.classList.remove('show');
-});
-</script>
+    const form = document.getElementById('quoteForm');
+    const statusEl = document.getElementById('status');
+
+    function openModal(){
+      overlay.classList.add('show');
+      overlay.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      overlay.classList.remove('show');
+      overlay.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      statusEl.textContent = '';
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click',(e)=>{
+      if(e.target===overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('show')) closeModal();
+    });
+
+    // Submit demo (no envía a correo todavía)
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      statusEl.textContent = 'Listo. Recibimos tu solicitud (puedo conectarlo para que te llegue al correo).';
+      form.reset();
+
+      // volver a dejar renta por defecto tras reset
+      const servicio = form.querySelector('select[name="servicio"]');
+      if(servicio){
+        [...servicio.options].forEach(o => o.selected = (o.text === 'Renta de equipo de cómputo'));
+      }
+
+      setTimeout(closeModal, 1200);
+    });
+  </script>
 
 </body>
 </html>

@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RD Soluciones Tecnológicas</title>
 
+<link rel="icon" href="Logo Soluciones Tecnologicas.png">
+
 <style>
 
-/* ======== BASE ======== */
+/* ===== BASE ===== */
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
@@ -17,13 +19,13 @@ body{
 
 .container{
   width:90%;
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
 }
 
 h1,h2,h3{margin:0}
 
-/* ======== NAV ======== */
+/* ===== NAV ===== */
 nav{
   display:flex;
   justify-content:space-between;
@@ -32,17 +34,20 @@ nav{
 }
 
 .logo{
-  font-weight:800;
-  font-size:20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-.logo span{color:#0b5cff;}
+.logo img{
+  height:50px;
+}
 
 .navBtn{
   background:#0b5cff;
   color:#fff;
   border:none;
-  padding:12px 22px;
+  padding:12px 25px;
   border-radius:30px;
   cursor:pointer;
   font-weight:700;
@@ -54,59 +59,59 @@ nav{
   background:#256dff;
 }
 
-/* ======== HERO ======== */
+/* ===== HERO ===== */
 .hero{
-  padding:80px 0;
+  padding:90px 0;
   text-align:center;
 }
 
 .hero h1{
-  font-size:40px;
+  font-size:42px;
   margin-bottom:15px;
 }
 
 .hero p{
   color:#5b6475;
   font-size:18px;
-  max-width:600px;
+  max-width:700px;
   margin:auto;
 }
 
-/* ======== SERVICIOS ======== */
+/* ===== SERVICIOS ===== */
 .services{
-  padding:60px 0;
+  padding:70px 0;
 }
 
 .services h2{
   text-align:center;
-  margin-bottom:40px;
+  margin-bottom:50px;
 }
 
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  gap:25px;
 }
 
 .card{
   border:1px solid #e8edf5;
-  padding:25px;
+  padding:30px;
   border-radius:20px;
   text-align:center;
   transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-6px);
   box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
 .card h3{
-  margin-bottom:10px;
+  margin-bottom:12px;
   color:#0b5cff;
 }
 
-/* ======== WHATSAPP ======== */
+/* ===== WHATSAPP ===== */
 .whatsapp{
   position:fixed;
   right:20px;
@@ -124,15 +129,16 @@ nav{
   box-shadow:0 15px 30px rgba(0,0,0,.2);
 }
 
-/* ======== MODAL ======== */
+/* ===== MODAL ===== */
 .modalOverlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.5);
+  background:rgba(0,0,0,.55);
   display:none;
   justify-content:center;
   align-items:center;
   padding:20px;
+  z-index:999;
 }
 
 .modalOverlay.show{display:flex;}
@@ -140,14 +146,14 @@ nav{
 .modal{
   background:#ffffff;
   width:100%;
-  max-width:800px;
+  max-width:850px;
   border-radius:25px;
-  padding:30px;
+  padding:35px;
   animation:fadeIn .3s ease;
 }
 
 @keyframes fadeIn{
-  from{transform:translateY(10px);opacity:0}
+  from{transform:translateY(15px);opacity:0}
   to{transform:translateY(0);opacity:1}
 }
 
@@ -155,7 +161,7 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:20px;
+  margin-bottom:25px;
 }
 
 .modalHeader button{
@@ -167,11 +173,11 @@ nav{
 
 .quoteForm{
   display:grid;
-  gap:15px;
+  gap:18px;
 }
 
 .qInput{
-  padding:15px;
+  padding:16px;
   border-radius:30px;
   border:1px solid #e8edf5;
   background:#f4f7ff;
@@ -187,19 +193,19 @@ nav{
 .qRow{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:15px;
+  gap:18px;
 }
 
 .qText{
   border-radius:20px;
-  min-height:120px;
+  min-height:130px;
   resize:vertical;
 }
 
 .qBtn{
   background:#0b5cff;
   color:#fff;
-  padding:15px;
+  padding:16px;
   border:none;
   border-radius:30px;
   font-weight:800;
@@ -222,14 +228,17 @@ nav{
 <body>
 
 <div class="container">
+
 <nav>
-  <div class="logo">RD <span>Soluciones</span> Tecnológicas</div>
+  <div class="logo">
+    <img src="Logo Soluciones Tecnologicas.png" alt="RD Soluciones Tecnológicas">
+  </div>
   <button class="navBtn" id="openQuote">Cotizar</button>
 </nav>
 
 <section class="hero">
   <h1>Soluciones Tecnológicas Empresariales</h1>
-  <p>Infraestructura, seguridad, soporte y tecnología confiable para empresas que buscan estabilidad y crecimiento.</p>
+  <p>Infraestructura, seguridad, soporte y tecnología confiable para empresas que buscan estabilidad, orden y crecimiento.</p>
 </section>
 
 <section class="services">
@@ -237,24 +246,23 @@ nav{
   <div class="cards">
     <div class="card">
       <h3>Soporte TI</h3>
-      <p>Mantenimiento y atención empresarial.</p>
+      <p>Mantenimiento y atención empresarial profesional.</p>
     </div>
     <div class="card">
       <h3>Redes</h3>
-      <p>Instalación, configuración y seguridad.</p>
+      <p>Instalación, configuración y seguridad avanzada.</p>
     </div>
     <div class="card">
       <h3>Seguridad</h3>
-      <p>Firewalls, control de accesos y protección.</p>
+      <p>Firewalls, control de accesos y protección empresarial.</p>
     </div>
   </div>
 </section>
+
 </div>
 
-<!-- WhatsApp -->
 <a class="whatsapp" href="https://wa.me/5215500000000" target="_blank">💬</a>
 
-<!-- Modal -->
 <div class="modalOverlay" id="quoteOverlay">
   <div class="modal">
     <div class="modalHeader">
@@ -262,7 +270,7 @@ nav{
       <button id="closeQuote">✕</button>
     </div>
 
-    <form class="quoteForm" id="quoteForm">
+    <form class="quoteForm">
       <input class="qInput" type="text" placeholder="Nombre" required>
 
       <div class="qRow">
@@ -288,7 +296,6 @@ nav{
 </div>
 
 <script>
-
 const openBtn = document.getElementById('openQuote');
 const closeBtn = document.getElementById('closeQuote');
 const overlay = document.getElementById('quoteOverlay');
@@ -298,7 +305,6 @@ closeBtn.addEventListener('click',()=>overlay.classList.remove('show'));
 overlay.addEventListener('click',(e)=>{
   if(e.target===overlay) overlay.classList.remove('show');
 });
-
 </script>
 
 </body>

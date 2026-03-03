@@ -213,3 +213,36 @@ a{ text-decoration:none; color:inherit; }
   z-index:60;
 }
 .whatsapp:hover{ transform: translateY(-2px); }
+/* ===== GRID & CARDS ===== */
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:24px;
+}
+
+.card{
+  background:#ffffff;
+  padding:26px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: all .25s ease;
+}
+
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.card h3{
+  margin-top:0;
+  margin-bottom:10px;
+  color:var(--blue);
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.5;
+}

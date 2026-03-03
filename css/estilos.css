@@ -25,9 +25,35 @@ a{ text-decoration:none; color:inherit; }
   margin:auto;
 }
 
+/* ===== HEADER (PREMIUM) ===== */
+.header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.86);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+  transition: box-shadow .2s ease;
+}
 
 .header.scrolled{
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+  min-height:96px; /* controla altura del header */
+}
+
+/* Logo SOLO dentro del header */
+.header .logo img{
+  height:110px; /* ⬅️ aquí ajustas tamaño (110, 120, 140...) */
+  width:auto;
+  display:block;
+  max-height:none;
 }
 
 /* ===== MENU ===== */
@@ -140,6 +166,7 @@ a{ text-decoration:none; color:inherit; }
   padding:18px;
   z-index:999;
 }
+
 .modalOverlay.show{ display:flex; }
 
 .modal{
@@ -170,10 +197,12 @@ a{ text-decoration:none; color:inherit; }
 .iconBtn{
   background:#fff;
   border:1px solid var(--line);
-  width:44px; height:44px;
+  width:44px;
+  height:44px;
   border-radius:14px;
   cursor:pointer;
 }
+
 .iconBtn:hover{ background:rgba(11,92,255,.06); }
 
 .quoteForm{ display:grid; gap:14px; }
@@ -224,6 +253,7 @@ a{ text-decoration:none; color:inherit; }
   z-index:60;
   transition:.2s;
 }
+
 .whatsapp:hover{ transform: translateY(-2px); }
 
 /* ===== FOOTER PRO ===== */
@@ -257,6 +287,7 @@ a{ text-decoration:none; color:inherit; }
   margin:8px 0;
   color:rgba(255,255,255,.85);
 }
+
 .footerLinks a:hover{
   color:#fff;
   text-decoration:underline;
@@ -290,6 +321,7 @@ a{ text-decoration:none; color:inherit; }
   text-decoration:underline;
   text-underline-offset:4px;
 }
+
 .footerBottomRow .legal a:hover{
   color:#fff;
 }
@@ -302,7 +334,8 @@ a{ text-decoration:none; color:inherit; }
 @media(max-width:820px){
   .menu{ gap:10px; flex-wrap:wrap; justify-content:flex-end; }
   .menu a{ padding:8px 10px; }
-  .logo img{ height:90px; }   /* logo en móvil */
+  .nav{ min-height:84px; }
+  .header .logo img{ height:78px; }
 }
 
 @media(max-width:760px){
@@ -310,15 +343,6 @@ a{ text-decoration:none; color:inherit; }
   .modal{ padding:18px; }
   .hero{ padding:70px 0 50px; }
   .hero h1{ font-size:34px; }
-} 10px; }
-  .logo img{ height:44px; }
-}
-.logo img{
-  height: 90px !important;
-  width: auto !important;
-  max-height: none !important;
-  display: block;
-}
-.nav{
-  padding: 12px 0 !important;
+  .nav{ min-height:74px; }
+  .header .logo img{ height:64px; }
 }

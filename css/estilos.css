@@ -345,9 +345,9 @@ a{ text-decoration:none; color:inherit; }
 
 .nav{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  padding:14px 0;
+  align-items:center;
+  padding:26px 0;
 }
 
 .logo img{

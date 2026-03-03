@@ -217,6 +217,8 @@ a{ text-decoration:none; color:inherit; }
 @media(max-width:760px){
   .row{ grid-template-columns:1fr; }
   .modal{ padding:18px; }
+  .hero{ padding:70px 0 50px; }
+.hero h1{ font-size:34px; }
 }
 /* ===== WHATSAPP FLOTANTE ===== */
 .whatsapp{

@@ -26,14 +26,7 @@ a{ text-decoration:none; color:inherit; }
 }
 
 /* ===== HEADER (PREMIUM) ===== */
-.header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(255,255,255,.85);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(0,0,0,.06);
-}
+.header{ background: red !important; }
 
 .header.scrolled{
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);

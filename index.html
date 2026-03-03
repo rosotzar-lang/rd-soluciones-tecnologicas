@@ -16,51 +16,19 @@
       <img src="./logo.png" alt="RD Soluciones Tecnológicas">
     </a>
 
-   <nav class="menu">
-  <a href="index.html" class="active">Inicio</a>
-  <a href="servicios.html">Servicios</a>
-  <a href="contacto.html">Contacto</a>
-<button id="openQuote" class="btn-primary" style="background:#0b1220;">
-  Cotizar ahora
-</button>
-</nav>
+    <nav class="menu">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+      <button id="openQuote" class="btn-primary" style="background:#0b1220;">
+        Cotizar ahora
+      </button>
+    </nav>
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <section style="padding:80px 0; background:#f9fbff;">
-  <div class="container">
-
-    <h2 style="text-align:center; margin-bottom:40px;">
-      ¿Por qué elegir RD Soluciones Tecnológicas?
-    </h2>
-
-    <div class="grid">
-
-      <article class="card">
-        <h3>Experiencia empresarial</h3>
-        <p>Implementamos soluciones pensadas para empresas reales, no soluciones improvisadas.</p>
-      </article>
-
-      <article class="card">
-  <h3>⚡ Respuesta rápida</h3>
-  <p>Atendemos solicitudes y soporte con seguimiento profesional.</p>
-</article>
-
-    <article class="card">
-  <h3>⚡ Respuesta rápida</h3>
-  <p>Atendemos solicitudes y soporte con seguimiento profesional.</p>
-</article>
-
-      <article class="card">
-        <h3>Escalabilidad</h3>
-        <p>Nuestras soluciones crecen junto con tu empresa.</p>
-      </article>
-
-    </div>
-
-  </div>
-</section>
   <div class="container">
     <h1>Soluciones Tecnológicas Empresariales</h1>
     <p>
@@ -69,8 +37,12 @@
     </p>
 
     <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-      <a href="servicios.html" class="btn-primary" style="display:inline-block;">Ver servicios</a>
-      <button id="openQuote" class="btn-primary" style="background:#0b1220;">Cotizar ahora</button>
+      <a href="servicios.html" class="btn-primary">Ver servicios</a>
+      <button class="btn-primary"
+              onclick="document.getElementById('openQuote').click()"
+              style="background:#0b1220;">
+        Cotizar ahora
+      </button>
     </div>
 
     <div class="grid" style="margin-top:40px;">
@@ -91,6 +63,7 @@
     </div>
   </div>
 </section>
+
 <!-- MODAL COTIZAR -->
 <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
   <div class="modal" role="dialog" aria-modal="true">
@@ -120,41 +93,21 @@
 
       <textarea class="input textarea" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
 
-      <button class="btn-primary" style="width:100%;" type="submit">Enviar cotización</button>
+      <button class="btn-primary" style="width:100%;" type="submit">
+        Enviar cotización
+      </button>
     </form>
   </div>
 </div>
-  <footer class="footer">
-  <div class="container footerGrid">
 
-    <div>
-      <h4>RD Soluciones Tecnológicas</h4>
-      <p>
-        Infraestructura, seguridad, soporte y renta de equipo de cómputo
-        para empresas que buscan estabilidad y crecimiento.
-      </p>
-    </div>
-
-    <div>
-      <h4>Secciones</h4>
-      <a href="index.html">Inicio</a><br>
-      <a href="servicios.html">Servicios</a><br>
-      <a href="contacto.html">Contacto</a>
-    </div>
-
-    <div>
-      <h4>Contacto</h4>
-      <p>WhatsApp: 55 0000 0000</p>
-      <p>Correo: contacto@tudominio.com</p>
-    </div>
-
-  </div>
-</footer>
-  <a class="whatsapp"
+<!-- WHATSAPP -->
+<a class="whatsapp"
    href="https://wa.me/5215500000000?text=Hola%20RD%20Soluciones%20Tecnológicas,%20quiero%20una%20cotización."
    target="_blank"
    aria-label="WhatsApp">💬</a>
-  <footer class="footer">
+
+<!-- FOOTER PRO -->
+<footer class="footer">
   <div class="container footerGrid">
 
     <div>
@@ -192,6 +145,7 @@
     </div>
   </div>
 </footer>
+
 <script src="./js/app.js"></script>
 </body>
 </html>

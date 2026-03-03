@@ -47,7 +47,7 @@ a{ text-decoration:none; color:inherit; }
 }
 
 .logo img{
-  height:120px;          /* <-- AQUÍ se controla el tamaño real del logo */
+  height:140px;          /* <-- AQUÍ se controla el tamaño real del logo */
   width:auto;
   display:block;
   max-height:none;

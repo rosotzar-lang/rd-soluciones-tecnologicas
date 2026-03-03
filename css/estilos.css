@@ -27,7 +27,7 @@ a{ text-decoration:none; color:inherit; }
 
 /* ===== HEADER (PREMIUM) ===== */
 .logo img{
-  height: 300px !important;
+  height: 600px !important;
   width: auto !important;
   display: block;
 }

@@ -33,7 +33,39 @@
     </p>
   </div>
 </section>
+<!-- MODAL COTIZAR -->
+<div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modalHeader">
+      <h3>Cotización</h3>
+      <button class="iconBtn" id="closeQuote" aria-label="Cerrar">✕</button>
+    </div>
 
+    <form class="quoteForm">
+      <input class="input" type="text" placeholder="Nombre" required>
+
+      <div class="row">
+        <input class="input" type="email" placeholder="Correo electrónico" required>
+        <input class="input" type="tel" placeholder="Teléfono" required>
+      </div>
+
+      <div class="row">
+        <select class="input" required>
+          <option value="">Servicio de interés</option>
+          <option selected>Renta de equipo de cómputo</option>
+          <option>Soporte TI</option>
+          <option>Redes</option>
+          <option>Seguridad</option>
+        </select>
+        <input class="input" type="date">
+      </div>
+
+      <textarea class="input textarea" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
+
+      <button class="btn-primary" style="width:100%;" type="submit">Enviar cotización</button>
+    </form>
+  </div>
+</div>
 <script src="./js/app.js"></script>
 </body>
 </html>

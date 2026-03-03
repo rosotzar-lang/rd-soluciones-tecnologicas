@@ -1,44 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios | RD Soluciones Tecnológicas</title>
-<link rel="icon" href="./Logo-principal.png">
-<link rel="stylesheet" href="estilos.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios | RD Soluciones Tecnológicas</title>
 
+  <link rel="icon" href="./logo.png">
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
 <body>
 
-<nav>
-  <div class="logo">
-    <img src="./Logo-principal.png" alt="RD Soluciones Tecnológicas">
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <img src="./logo.png" alt="RD Soluciones Tecnológicas">
+    </a>
+
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html" class="active">Servicios</a>
+      <button id="openQuote" class="btn-primary">Cotizar</button>
+    </nav>
   </div>
+</header>
 
-  <div style="display:flex; gap:25px; align-items:center;">
-    <a href="index.html">Inicio</a>
-    <a href="servicios.html">Servicios</a>
-    <a href="contacto.html">Contacto</a>
-  </div>
-</nav>
-
-<section style="padding:80px 10%; text-align:center;">
-  <h1>Nuestros Servicios</h1>
-  <p style="margin-top:20px; font-size:18px; color:#555;">
-    Ofrecemos soluciones tecnológicas integrales para empresas.
-  </p>
-
-  <div style="margin-top:50px;">
-    <h2>Renta de equipo de cómputo</h2>
-    <p>Equipos empresariales listos para operar con mantenimiento incluido.</p>
-
-    <h2 style="margin-top:40px;">Soporte TI</h2>
-    <p>Administración, mantenimiento y monitoreo de infraestructura.</p>
-
-    <h2 style="margin-top:40px;">Redes y Seguridad</h2>
-    <p>Instalación, configuración de VLAN, firewalls y protección empresarial.</p>
+<section class="hero">
+  <div class="container">
+    <h1>Servicios</h1>
+    <p>Soluciones reales para empresas: soporte, redes, seguridad y renta de equipo.</p>
   </div>
 </section>
 
+<section class="container" style="padding-bottom:80px;">
+  <div class="grid">
+    <article class="card">
+      <h3>Renta de equipo de cómputo</h3>
+      <p>Renta mensual, renovación, soporte y reemplazo opcional.</p>
+    </article>
+
+    <article class="card">
+      <h3>Soporte TI</h3>
+      <p>Mantenimiento preventivo/correctivo, tickets y atención a usuarios.</p>
+    </article>
+
+    <article class="card">
+      <h3>Redes</h3>
+      <p>Wi-Fi empresarial, cableado, VLAN, switches y configuración profesional.</p>
+    </article>
+
+    <article class="card">
+      <h3>Seguridad</h3>
+      <p>Firewall, control de navegación, políticas y monitoreo.</p>
+    </article>
+  </div>
+</section>
+
+<!-- MODAL COTIZAR -->
+<div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modalHeader">
+      <h3>Cotización</h3>
+      <button class="iconBtn" id="closeQuote" aria-label="Cerrar">✕</button>
+    </div>
+
+    <form class="quoteForm">
+      <input class="input" type="text" placeholder="Nombre" required>
+
+      <div class="row">
+        <input class="input" type="email" placeholder="Correo electrónico" required>
+        <input class="input" type="tel" placeholder="Teléfono" required>
+      </div>
+
+      <div class="row">
+        <select class="input" required>
+          <option value="">Servicio de interés</option>
+          <option selected>Renta de equipo de cómputo</option>
+          <option>Soporte TI</option>
+          <option>Redes</option>
+          <option>Seguridad</option>
+        </select>
+        <input class="input" type="date">
+      </div>
+
+      <textarea class="input textarea" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
+
+      <button class="btn-primary" style="width:100%;" type="submit">Enviar cotización</button>
+    </form>
+  </div>
+</div>
+
+<script src="./js/app.js"></script>
 </body>
 </html>

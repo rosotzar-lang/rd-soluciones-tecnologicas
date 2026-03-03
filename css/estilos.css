@@ -25,29 +25,9 @@ a{ text-decoration:none; color:inherit; }
   margin:auto;
 }
 
-/* ===== HEADER (PREMIUM) ===== */
-.logo img{
-  height: 120px !important;
-  width: auto !important;
-  display: block;
-}
 
 .header.scrolled{
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:26px 0;
-}
-
-.logo img{
-  height:300px;          /* <-- AQUÍ se controla el tamaño real del logo */
-  width:auto;
-  display:block;
-  max-height:none;
 }
 
 /* ===== MENU ===== */
@@ -332,4 +312,13 @@ a{ text-decoration:none; color:inherit; }
   .hero h1{ font-size:34px; }
 } 10px; }
   .logo img{ height:44px; }
+}
+.logo img{
+  height: 200px !important;
+  width: auto !important;
+  max-height: none !important;
+  display: block;
+}
+.nav{
+  padding: 12px 0 !important;
 }

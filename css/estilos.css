@@ -306,15 +306,7 @@ a{ text-decoration:none; color:inherit; }
   text-decoration:underline;
 }
 
-.footerBottomRow{
-  margin-top:46px;
-  padding-top:22px;
-  border-top:1px solid rgba(255,255,255,.14);
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  flex-wrap:wrap;
-  align-items:center;
+
 }
 
 .footerBottomRow .copy{

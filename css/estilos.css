@@ -99,10 +99,27 @@ a{ text-decoration:none; color:inherit; }
   text-align:center;
 }
 
+/* ===== HERO (CORPORATIVO) ===== */
+.hero{
+  padding:90px 0 70px;
+  text-align:center;
+  background: radial-gradient(900px 380px at 50% -10%, rgba(11,92,255,.18), transparent 60%),
+              linear-gradient(180deg, #ffffff, #f7faff);
+  border-bottom:1px solid var(--line);
+}
+
 .hero h1{
-  font-size:46px;
+  font-size:52px;
   margin:0;
-  letter-spacing:-0.6px;
+  letter-spacing:-1px;
+}
+
+.hero p{
+  margin:16px auto 0;
+  max-width:860px;
+  font-size:19px;
+  color:var(--muted);
+  line-height:1.6;
 }
 
 .hero p{

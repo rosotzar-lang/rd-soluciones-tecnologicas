@@ -7,124 +7,30 @@
 
   <link rel="icon" href="logo.png">
 
-  <!-- Si tu CSS externo existe, lo toma. Si no, NO pasa nada porque abajo va el CSS del modal -->
+  <!-- Tu CSS real (en tu repo lo tienes en raíz como estilos.css) -->
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Por si luego lo mueves a /css -->
   <link rel="stylesheet" href="css/estilos.css">
 
-  <!-- CSS del MODAL (forzado) para que SIEMPRE se vea bien aunque no cargue estilos.css -->
+  <!-- BACKUP CSS del modal (solo para que nunca se vea “cuadrado”) -->
   <style>
-    .modalOverlay{
-      position: fixed;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      background: rgba(0,0,0,.55);
-      z-index: 999999;
-    }
-    .modalOverlay.show{ display:flex; }
-
-    .modal{
-      width: min(860px, 95vw);
-      max-height: 90vh;
-      overflow: auto;
-      background: #fff;
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.25);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .modalHeader{
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      background: #fff;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-      z-index: 2;
-    }
-
-    .iconBtn{
-      border: 0;
-      background: #fff;
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.08);
-    }
-    .iconBtn:hover{ background: rgba(0,0,0,.04); }
-
-    .quoteForm{ display: grid; gap: 12px; }
-
-    .field label{
-      display:block;
-      font-weight:600;
-      margin-bottom: 6px;
-    }
-
-    .input, select, .textarea{
-      width:100%;
-      box-sizing:border-box;
-      padding: 12px 14px;
-      border-radius: 999px;
-      border: 1px solid #dfe8ff;
-      outline: none;
-    }
-
-    .row{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    @media (max-width: 640px){
-      .row{ grid-template-columns: 1fr; }
-    }
-
-    .pillGroup{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .pillGroup input{ display:none; }
-
-    .pill{
-      border: 1px solid #dfe8ff;
-      padding: 8px 14px;
-      border-radius: 999px;
-      cursor:pointer;
-      user-select:none;
-      font-weight: 600;
-    }
-    .pillGroup input:checked + .pill{
-      background: #eaf1ff;
-      border-color: #2b6cff;
-    }
-
-    .check{
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      padding: 10px 12px;
-      border: 1px solid #dfe8ff;
-      border-radius: 14px;
-    }
-    .check input{ width: 16px; height: 16px; }
-
-    /* Botón azul si tu CSS externo no carga */
-    .btn-primary{
-      border: 0;
-      padding: 12px 18px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 700;
-      background: #0b55ff;
-      color: #fff;
-    }
+    .modalOverlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.55);z-index:999999}
+    .modalOverlay.show{display:flex}
+    .modal{width:min(860px,95vw);max-height:90vh;overflow:auto;background:#fff;border-radius:18px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);font-family:Arial,Helvetica,sans-serif}
+    .modalHeader{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;padding-bottom:10px;margin-bottom:10px;z-index:2}
+    .iconBtn{border:0;background:#fff;width:38px;height:38px;border-radius:12px;cursor:pointer;font-size:18px;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+    .quoteForm{display:grid;gap:12px}
+    .field label{display:block;font-weight:600;margin-bottom:6px}
+    .input{width:100%;box-sizing:border-box;padding:12px 14px;border-radius:999px;border:1px solid #dfe8ff;outline:none}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:640px){.row{grid-template-columns:1fr}}
+    .pillGroup{display:flex;gap:10px;flex-wrap:wrap}
+    .pillGroup input{display:none}
+    .pill{border:1px solid #dfe8ff;padding:8px 14px;border-radius:999px;cursor:pointer;user-select:none;font-weight:600}
+    .pillGroup input:checked + .pill{background:#eaf1ff;border-color:#2b6cff}
+    .check{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid #dfe8ff;border-radius:14px}
+    .check input{width:16px;height:16px}
+    .btn-primary{border:0;padding:12px 18px;border-radius:999px;cursor:pointer;font-weight:700;background:#0b1220;color:#fff}
   </style>
 </head>
 
@@ -141,7 +47,6 @@
       <a href="servicios.html">Servicios</a>
       <a href="contacto.html" class="active">Contacto</a>
 
-      <!-- IMPORTANTE: openQuote para que el JS lo detecte -->
       <button class="btn-primary openQuote" type="button" style="background:#0b1220;">
         Cotizar
       </button>
@@ -175,15 +80,17 @@
   </div>
 </section>
 
-<!-- MODAL COTIZAR -->
-<div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
+<!-- MODAL COTIZAR (OCULTO POR DEFECTO AUNQUE NO CARGUE CSS) -->
+<div class="modalOverlay" id="quoteOverlay" aria-hidden="true" style="display:none;">
   <div class="modal" role="dialog" aria-modal="true" aria-label="Formulario de cotización">
+
     <div class="modalHeader">
       <h3>Cotización</h3>
       <button class="iconBtn" id="closeQuote" type="button" aria-label="Cerrar">✕</button>
     </div>
 
     <form class="quoteForm" id="quoteForm">
+
       <div class="field">
         <label for="nombre">Nombre</label>
         <input id="nombre" class="input" type="text" name="nombre" placeholder="Nombre Completo" required>
@@ -251,7 +158,6 @@
   </div>
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp"
    href="https://wa.me/5215500000000?text=Hola%20RD%20Soluciones%20Tecnológicas,%20quiero%20una%20cotización."
    target="_blank"
@@ -267,16 +173,21 @@
   </div>
 </footer>
 
-<!-- JS del MODAL (forzado) para que SIEMPRE funcione aunque no cargue app.js -->
+<!-- Tu JS real (si existe) -->
+<script src="css/js/app.js"></script>
+
+<!-- BACKUP JS (para que siempre abra/cierre aunque falle app.js) -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const openBtns = document.querySelectorAll(".openQuote");
     const overlay = document.getElementById("quoteOverlay");
     const closeBtn = document.getElementById("closeQuote");
+    const form = document.getElementById("quoteForm");
 
-    if (!openBtns.length || !overlay || !closeBtn) return;
+    if (!overlay || !closeBtn) return;
 
     const openModal = () => {
+      overlay.style.display = "flex";
       overlay.classList.add("show");
       overlay.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -285,21 +196,15 @@
     const closeModal = () => {
       overlay.classList.remove("show");
       overlay.setAttribute("aria-hidden", "true");
+      overlay.style.display = "none";
       document.body.style.overflow = "";
     };
 
     openBtns.forEach(btn => btn.addEventListener("click", openModal));
     closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
 
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) closeModal();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModal();
-    });
-
-    const form = document.getElementById("quoteForm");
     if (form) {
       form.addEventListener("submit", (e) => {
         e.preventDefault();

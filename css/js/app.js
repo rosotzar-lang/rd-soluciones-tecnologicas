@@ -66,3 +66,45 @@ window.addEventListener("scroll", () => {
   }
 });
 })();
+/* ===== FORMULARIO COTIZACION A WHATSAPP ===== */
+
+const form = document.getElementById("quoteForm");
+
+if(form){
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const nombre = form.nombre.value;
+const empresa = form.empresa.value;
+const telefono = form.telefono.value;
+const estado = form.estado.value;
+const correo = form.correo.value;
+
+const plazo = document.querySelector('input[name="plazo"]:checked')?.value || "";
+const empleados = document.querySelector('input[name="empleados"]:checked')?.value || "";
+
+const mensaje =
+`Hola RD Soluciones Tecnológicas.
+
+Quiero solicitar una cotización.
+
+Nombre: ${nombre}
+Empresa: ${empresa}
+Teléfono: ${telefono}
+Estado: ${estado}
+Correo: ${correo}
+Plazo: ${plazo}
+Empleados: ${empleados}
+`;
+
+const numero = "5215500000000"; // TU WHATSAPP
+
+const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+window.open(url, "_blank");
+
+});
+
+}

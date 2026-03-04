@@ -450,3 +450,17 @@ a{ text-decoration:none; color:inherit; }
   .pillGroup{ gap:8px; }
   .pill{ padding:10px 12px; }
 }
+.modalOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+.modalOverlay.show{
+  display: flex;
+}

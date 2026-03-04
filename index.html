@@ -21,8 +21,8 @@
       <a href="servicios.html">Servicios</a>
       <a href="contacto.html">Contacto</a>
 
-      <!-- ✅ Botón 1 (menu) -->
-      <button class="btn-primary openQuote" style="background:#0b1220;">
+      <!-- BOTÓN MENU CORREGIDO -->
+      <button id="openQuote" class="btn-primary openQuote" style="background:#0b1220;">
         Cotizar ahora
       </button>
     </nav>
@@ -41,7 +41,7 @@
     <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
       <a href="servicios.html" class="btn-primary">Ver servicios</a>
 
-      <!-- ✅ Botón 2 (hero) -->
+      <!-- BOTÓN HERO -->
       <button class="btn-primary openQuote" style="background:#0b1220;">
         Cotizar ahora
       </button>
@@ -105,7 +105,7 @@
 
       <div class="field">
         <label>Tipo de Plazo</label>
-        <div class="pillGroup" role="group" aria-label="Tipo de plazo">
+        <div class="pillGroup">
           <input type="radio" id="plazoCorto" name="plazo" value="Corto plazo" checked />
           <label class="pill" for="plazoCorto">Corto Plazo</label>
 
@@ -116,7 +116,7 @@
 
       <div class="field">
         <label>¿Cuántos empleados tienes en tu equipo de trabajo?</label>
-        <div class="pillGroup" role="group" aria-label="Tamaño del equipo">
+        <div class="pillGroup">
           <input type="radio" id="emp1" name="empleados" value="1-10" checked />
           <label class="pill" for="emp1">1-10</label>
 
@@ -143,13 +143,11 @@
   </div>
 </div>
 
-<!-- WHATSAPP -->
 <a class="whatsapp"
    href="https://wa.me/5215500000000?text=Hola%20RD%20Soluciones%20Tecnológicas,%20quiero%20una%20cotización."
    target="_blank"
    aria-label="WhatsApp">💬</a>
 
-<!-- FOOTER PRO -->
 <footer class="footer">
   <div class="container footerGrid">
     <div>
@@ -184,6 +182,7 @@
     </div>
   </div>
 </footer>
+
 <script src="css/js/app.js"></script>
 </body>
 </html>

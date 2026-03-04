@@ -167,6 +167,7 @@ a{ text-decoration:none; color:inherit; }
   z-index:999;
 }
 
+.modalOverlay{ display:none; }
 .modalOverlay.show{ display:flex; }
 
 .modal{

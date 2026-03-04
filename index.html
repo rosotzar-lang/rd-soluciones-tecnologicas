@@ -21,8 +21,7 @@
       <a href="servicios.html">Servicios</a>
       <a href="contacto.html">Contacto</a>
 
-      <!-- BOTÓN MENU CORREGIDO -->
-      <button id="openQuote" class="btn-primary openQuote" style="background:#0b1220;">
+      <button id="openQuote" class="btn-primary openQuote" type="button" style="background:#0b1220;">
         Cotizar ahora
       </button>
     </nav>
@@ -41,8 +40,7 @@
     <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
       <a href="servicios.html" class="btn-primary">Ver servicios</a>
 
-      <!-- BOTÓN HERO -->
-      <button class="btn-primary openQuote" style="background:#0b1220;">
+      <button class="btn-primary openQuote" type="button" style="background:#0b1220;">
         Cotizar ahora
       </button>
     </div>
@@ -69,12 +67,45 @@
   </div>
 </section>
 
+<!-- WHY (DEBE IR AQUÍ: ABAJO DE LAS FOTOS Y ANTES DEL FOOTER) -->
+<section class="why">
+  <div class="container">
+    <h2 class="why-title">¿Por qué elegir RD Soluciones Tecnológicas?</h2>
+    <p class="why-sub">
+      Brindamos soluciones tecnológicas reales para empresas que necesitan estabilidad,
+      seguridad y soporte confiable.
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>⚡ Respuesta rápida</h3>
+        <p>Atención y soporte técnico con seguimiento profesional y tiempos de respuesta ágiles.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>🔒 Seguridad empresarial</h3>
+        <p>Implementamos firewalls, políticas de seguridad y control de accesos para proteger tu empresa.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>💻 Equipos listos para trabajar</h3>
+        <p>Renta de equipos de cómputo con mantenimiento, renovación y soporte incluido.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>📈 Escalabilidad</h3>
+        <p>Soluciones diseñadas para crecer junto con tu empresa sin afectar tu operación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MODAL COTIZAR -->
 <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
   <div class="modal" role="dialog" aria-modal="true">
     <div class="modalHeader">
       <h3>Cotización</h3>
-      <button class="iconBtn" id="closeQuote" aria-label="Cerrar">✕</button>
+      <button class="iconBtn" id="closeQuote" type="button" aria-label="Cerrar">✕</button>
     </div>
 
     <form class="quoteForm" id="quoteForm">
@@ -143,11 +174,14 @@
   </div>
 </div>
 
+<!-- WHATSAPP -->
 <a class="whatsapp"
    href="https://wa.me/5215500000000?text=Hola%20RD%20Soluciones%20Tecnológicas,%20quiero%20una%20cotización."
    target="_blank"
+   rel="noopener"
    aria-label="WhatsApp">💬</a>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container footerGrid">
     <div>
@@ -181,41 +215,6 @@
       <a href="#">Aviso de Privacidad</a>
     </div>
   </div>
-  <section class="why">
-  <div class="container">
-
-    <h2 class="why-title">¿Por qué elegir RD Soluciones Tecnológicas?</h2>
-    <p class="why-sub">
-      Brindamos soluciones tecnológicas reales para empresas que necesitan estabilidad,
-      seguridad y soporte confiable.
-    </p>
-
-    <div class="why-grid">
-
-      <div class="why-card">
-        <h3>⚡ Respuesta rápida</h3>
-        <p>Atención y soporte técnico con seguimiento profesional y tiempos de respuesta ágiles.</p>
-      </div>
-
-      <div class="why-card">
-        <h3>🔒 Seguridad empresarial</h3>
-        <p>Implementamos firewalls, políticas de seguridad y control de accesos para proteger tu empresa.</p>
-      </div>
-
-      <div class="why-card">
-        <h3>💻 Equipos listos para trabajar</h3>
-        <p>Renta de equipos de cómputo con mantenimiento, renovación y soporte incluido.</p>
-      </div>
-
-      <div class="why-card">
-        <h3>📈 Escalabilidad</h3>
-        <p>Soluciones diseñadas para crecer junto con tu empresa sin afectar tu operación.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 </footer>
 
 <script src="css/js/app.js"></script>

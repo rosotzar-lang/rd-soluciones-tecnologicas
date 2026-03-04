@@ -22,7 +22,7 @@
       <a href="contacto.html">Contacto</a>
 
       <!-- Botón que abre el modal -->
-      <button id="openQuote" class="btn-primary" type="button" style="background:#0b1220;">
+      <button class="btn-primary openQuote" type="button" style="background:#0b1220;">
         Cotizar
       </button>
     </nav>
@@ -43,7 +43,7 @@
       <h3>Renta de equipo de cómputo</h3>
       <p>Renta mensual, renovación, soporte y reemplazo opcional.</p>
       <img src="./renta.png" alt="Renta de equipo" class="card-img" />
-      <button type="button" class="btn-primary btn-mini js-open-quote" data-service="Renta de equipo de cómputo" style="background:#0b1220;">
+      <button type="button" class="btn-primary openQuote btn-mini" style="background:#0b1220;">
         Cotizar este servicio
       </button>
     </article>
@@ -52,7 +52,7 @@
       <h3>Soporte TI</h3>
       <p>Mantenimiento preventivo/correctivo y atención a usuarios.</p>
       <img src="./mantenimiento.png" alt="Soporte TI" class="card-img" />
-      <button type="button" class="btn-primary btn-mini js-open-quote" data-service="Soporte TI" style="background:#0b1220;">
+      <button type="button" class="btn-primary openQuote btn-mini" style="background:#0b1220;">
         Cotizar este servicio
       </button>
     </article>
@@ -60,39 +60,48 @@
   </div>
 </section>
 
-<!-- MODAL COTIZAR -->
+<!-- MODAL COTIZAR (UNA SOLA VEZ) -->
 <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Formulario de cotización">
+  <div class="modal" role="dialog" aria-modal="true">
     <div class="modalHeader">
       <h3>Cotización</h3>
       <button class="iconBtn" id="closeQuote" type="button" aria-label="Cerrar">✕</button>
     </div>
 
     <form class="quoteForm" id="quoteForm">
-      <input class="input" name="nombre" type="text" placeholder="Nombre" required />
-
-      <div class="row">
-        <input class="input" name="email" type="email" placeholder="Correo electrónico" required />
-        <input class="input" name="telefono" type="tel" placeholder="Teléfono" required />
+      <div class="field">
+        <label>Nombre</label>
+        <input class="input" type="text" name="nombre" placeholder="Nombre Completo" required />
       </div>
 
-      <div class="row">
-        <select class="input" name="servicio" id="serviceSelect" required>
-          <option value="">Servicio de interés</option>
-          <option>Renta de equipo de cómputo</option>
-          <option>Soporte TI</option>
-          <option>Redes</option>
-          <option>Seguridad</option>
-        </select>
-        <input class="input" name="fecha" type="date" />
+      <div class="field">
+        <label>Empresa</label>
+        <input class="input" type="text" name="empresa" placeholder="Empresa / Negocio" required />
       </div>
 
-      <textarea class="input textarea" name="mensaje" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
+      <div class="field">
+        <label>Teléfono</label>
+        <input class="input" type="tel" name="telefono" placeholder="Ingresa tu Teléfono" required />
+      </div>
 
-      <!-- Botón submit REAL -->
-      <button class="btn-primary openQuote" type="button" style="background:#0b1220;">
-  Cotizar
-</button>
+      <div class="field">
+        <label>Estado</label>
+        <input class="input" type="text" name="estado" placeholder="Ingresa tu Estado" required />
+      </div>
+
+      <div class="field">
+        <label>Correo</label>
+        <input class="input" type="email" name="correo" placeholder="correo@gmail.com" required />
+      </div>
+
+      <label class="check">
+        <input type="checkbox" id="agree" required />
+        <span>Estoy de Acuerdo</span>
+      </label>
+
+      <button class="btn-primary" style="width:100%;" type="submit">
+        Enviar cotización
+      </button>
     </form>
   </div>
 </div>
@@ -144,52 +153,7 @@
   </div>
 </footer>
 
-<script src="./js/app.js"></script>
-  <!-- MODAL COTIZAR -->
-<div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true">
-    <div class="modalHeader">
-      <h3>Cotización</h3>
-      <button class="iconBtn" id="closeQuote" type="button" aria-label="Cerrar">✕</button>
-    </div>
-
-    <form class="quoteForm" id="quoteForm">
-      <div class="field">
-        <label>Nombre</label>
-        <input class="input" type="text" name="nombre" placeholder="Nombre Completo" required />
-      </div>
-
-      <div class="field">
-        <label>Empresa</label>
-        <input class="input" type="text" name="empresa" placeholder="Empresa / Negocio" required />
-      </div>
-
-      <div class="field">
-        <label>Teléfono</label>
-        <input class="input" type="tel" name="telefono" placeholder="Ingresa tu Teléfono" required />
-      </div>
-
-      <div class="field">
-        <label>Estado</label>
-        <input class="input" type="text" name="estado" placeholder="Ingresa tu Estado" required />
-      </div>
-
-      <div class="field">
-        <label>Correo</label>
-        <input class="input" type="email" name="correo" placeholder="correo@gmail.com" required />
-      </div>
-
-      <label class="check">
-        <input type="checkbox" id="agree" required />
-        <span>Estoy de Acuerdo</span>
-      </label>
-
-      <button class="btn-primary" style="width:100%;" type="submit">
-        Enviar cotización
-      </button>
-    </form>
-  </div>
-</div>
-  <script src="css/js/app.js"></script>
+<!-- Script correcto (tu estructura real) -->
+<script src="css/js/app.js"></script>
 </body>
 </html>

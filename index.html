@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RD Soluciones Tecnológicas</title>
 
-  <link rel="icon" href="./logo.png">
-  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="icon" href="./logo.png" />
+  <link rel="stylesheet" href="./css/estilos.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
     <a href="index.html" class="logo">
-     <img src="logo.png" alt="RD Soluciones Tecnológicas">
+      <img src="./logo.png" alt="RD Soluciones Tecnológicas" />
     </a>
 
     <nav class="menu">
       <a href="index.html" class="active">Inicio</a>
       <a href="servicios.html">Servicios</a>
       <a href="contacto.html">Contacto</a>
-      <button id="openQuote" class="btn-primary" style="background:#0b1220;">
+
+      <!-- ✅ Botón 1 (menu) -->
+      <button class="btn-primary openQuote" style="background:#0b1220;">
         Cotizar ahora
       </button>
     </nav>
@@ -38,31 +40,31 @@
 
     <div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
       <a href="servicios.html" class="btn-primary">Ver servicios</a>
-      <button class="btn-primary"
-              onclick="document.getElementById('openQuote').click()"
-              style="background:#0b1220;">
+
+      <!-- ✅ Botón 2 (hero) -->
+      <button class="btn-primary openQuote" style="background:#0b1220;">
         Cotizar ahora
       </button>
     </div>
 
     <div class="grid" style="margin-top:40px;">
-    <article class="card">
-  <h3>Respuesta rápida</h3>
-  <p>Atendemos solicitudes y soporte con seguimiento profesional.</p>
-  <img src="./imagen-1.png" alt="Respuesta rápida" class="card-img">
-</article>
+      <article class="card">
+        <h3>Respuesta rápida</h3>
+        <p>Atendemos solicitudes y soporte con seguimiento profesional.</p>
+        <img src="./imagen-1.png" alt="Respuesta rápida" class="card-img" />
+      </article>
 
       <article class="card">
-  <h3>Seguridad y control</h3>
-  <p>Políticas, firewalls y protección para tu operación.</p>
-  <img src="./imagen-2.png" alt="Seguridad y control" class="card-img">
-</article>
+        <h3>Seguridad y control</h3>
+        <p>Políticas, firewalls y protección para tu operación.</p>
+        <img src="./imagen-2.png" alt="Seguridad y control" class="card-img" />
+      </article>
 
-     <article class="card">
-  <h3>Equipos listos</h3>
-  <p>Renta de laptops/PC con soporte y mantenimiento.</p>
-  <img src="./imagen-3.png" alt="Equipos listos" class="card-img">
-</article>
+      <article class="card">
+        <h3>Equipos listos</h3>
+        <p>Renta de laptops/PC con soporte y mantenimiento.</p>
+        <img src="./imagen-3.png" alt="Equipos listos" class="card-img" />
+      </article>
     </div>
   </div>
 </section>
@@ -75,69 +77,69 @@
       <button class="iconBtn" id="closeQuote" aria-label="Cerrar">✕</button>
     </div>
 
-   <form class="quoteForm" id="quoteForm">
-  <div class="field">
-    <label>Nombre</label>
-    <input class="input" type="text" name="nombre" placeholder="Nombre Completo" required>
-  </div>
+    <form class="quoteForm" id="quoteForm">
+      <div class="field">
+        <label>Nombre</label>
+        <input class="input" type="text" name="nombre" placeholder="Nombre Completo" required />
+      </div>
 
-  <div class="field">
-    <label>Empresa</label>
-    <input class="input" type="text" name="empresa" placeholder="Empresa / Negocio" required>
-  </div>
+      <div class="field">
+        <label>Empresa</label>
+        <input class="input" type="text" name="empresa" placeholder="Empresa / Negocio" required />
+      </div>
 
-  <div class="field">
-    <label>Teléfono</label>
-    <input class="input" type="tel" name="telefono" placeholder="Ingresa tu Teléfono" required>
-  </div>
+      <div class="field">
+        <label>Teléfono</label>
+        <input class="input" type="tel" name="telefono" placeholder="Ingresa tu Teléfono" required />
+      </div>
 
-  <div class="field">
-    <label>Estado</label>
-    <input class="input" type="text" name="estado" placeholder="Ingresa tu Estado" required>
-  </div>
+      <div class="field">
+        <label>Estado</label>
+        <input class="input" type="text" name="estado" placeholder="Ingresa tu Estado" required />
+      </div>
 
-  <div class="field">
-    <label>Correo</label>
-    <input class="input" type="email" name="correo" placeholder="correo@gmail.com" required>
-  </div>
+      <div class="field">
+        <label>Correo</label>
+        <input class="input" type="email" name="correo" placeholder="correo@gmail.com" required />
+      </div>
 
-  <div class="field">
-    <label>Tipo de Plazo</label>
-    <div class="pillGroup" role="group" aria-label="Tipo de plazo">
-      <input type="radio" id="plazoCorto" name="plazo" value="Corto plazo" checked>
-      <label class="pill" for="plazoCorto">Corto Plazo</label>
+      <div class="field">
+        <label>Tipo de Plazo</label>
+        <div class="pillGroup" role="group" aria-label="Tipo de plazo">
+          <input type="radio" id="plazoCorto" name="plazo" value="Corto plazo" checked />
+          <label class="pill" for="plazoCorto">Corto Plazo</label>
 
-      <input type="radio" id="plazoLargo" name="plazo" value="Largo plazo">
-      <label class="pill" for="plazoLargo">Largo Plazo</label>
-    </div>
-  </div>
+          <input type="radio" id="plazoLargo" name="plazo" value="Largo plazo" />
+          <label class="pill" for="plazoLargo">Largo Plazo</label>
+        </div>
+      </div>
 
-  <div class="field">
-    <label>¿Cuántos empleados tienes en tu equipo de trabajo?</label>
-    <div class="pillGroup" role="group" aria-label="Tamaño del equipo">
-      <input type="radio" id="emp1" name="empleados" value="1-10" checked>
-      <label class="pill" for="emp1">1-10</label>
+      <div class="field">
+        <label>¿Cuántos empleados tienes en tu equipo de trabajo?</label>
+        <div class="pillGroup" role="group" aria-label="Tamaño del equipo">
+          <input type="radio" id="emp1" name="empleados" value="1-10" checked />
+          <label class="pill" for="emp1">1-10</label>
 
-      <input type="radio" id="emp2" name="empleados" value="11-50">
-      <label class="pill" for="emp2">11-50</label>
+          <input type="radio" id="emp2" name="empleados" value="11-50" />
+          <label class="pill" for="emp2">11-50</label>
 
-      <input type="radio" id="emp3" name="empleados" value="50-99">
-      <label class="pill" for="emp3">50-99</label>
+          <input type="radio" id="emp3" name="empleados" value="50-99" />
+          <label class="pill" for="emp3">50-99</label>
 
-      <input type="radio" id="emp4" name="empleados" value="+100">
-      <label class="pill" for="emp4">+100</label>
-    </div>
-  </div>
+          <input type="radio" id="emp4" name="empleados" value="+100" />
+          <label class="pill" for="emp4">+100</label>
+        </div>
+      </div>
 
-  <label class="check">
-    <input type="checkbox" id="agree" required>
-    <span>Estoy de Acuerdo</span>
-  </label>
+      <label class="check">
+        <input type="checkbox" id="agree" required />
+        <span>Estoy de Acuerdo</span>
+      </label>
 
-  <button class="btn-primary" style="width:100%;" type="submit">
-    Enviar cotización
-  </button>
-</form>
+      <button class="btn-primary" style="width:100%;" type="submit">
+        Enviar cotización
+      </button>
+    </form>
   </div>
 </div>
 
@@ -150,7 +152,6 @@
 <!-- FOOTER PRO -->
 <footer class="footer">
   <div class="container footerGrid">
-
     <div>
       <h4>RD Soluciones Tecnológicas</h4>
       <p>
@@ -172,13 +173,10 @@
       <p>Correo: contacto@tudominio.com</p>
       <p>Ciudad de México</p>
     </div>
-
   </div>
 
   <div class="container footerBottomRow">
-    <div class="copy">
-      © 2026 RD Soluciones Tecnológicas. Todos los derechos reservados.
-    </div>
+    <div class="copy">© 2026 RD Soluciones Tecnológicas. Todos los derechos reservados.</div>
 
     <div class="legal">
       <a href="#">Términos y Condiciones</a>

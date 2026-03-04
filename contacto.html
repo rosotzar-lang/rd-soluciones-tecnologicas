@@ -1,61 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto | RD Soluciones Tecnológicas</title>
-
-  <link rel="icon" href="./logo.png">
-  <link rel="stylesheet" href="./css/estilos.css">
-</head>
-<body>
-
-<header class="header">
-  <div class="container nav">
-    <a href="index.html" class="logo">
-      <img src="./logo.png" alt="RD Soluciones Tecnológicas">
-    </a>
-
-    <nav class="menu">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="contacto.html" class="active">Contacto</a>
-
-      <!-- BOTÓN CORREGIDO -->
-      <button class="btn-primary openQuote" type="button" style="background:#0b1220;">
-        Cotizar
-      </button>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <h1>Contacto</h1>
-    <p>Escríbenos y te respondemos rápido.</p>
-  </div>
-</section>
-
-<section class="container" style="padding-bottom:80px;">
-  <div class="grid">
-    <article class="card">
-      <h3>WhatsApp</h3>
-      <p>55 0000 0000</p>
-    </article>
-
-    <article class="card">
-      <h3>Correo</h3>
-      <p>contacto@tudominio.com</p>
-    </article>
-
-    <article class="card">
-      <h3>Horario</h3>
-      <p>Lun–Vie 9:00 a 18:00</p>
-    </article>
-  </div>
-</section>
-
-<!-- MODAL COTIZAR -->
+<!-- MODAL COTIZAR (MISMO QUE INDEX) -->
 <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
   <div class="modal" role="dialog" aria-modal="true">
     <div class="modalHeader">
@@ -64,83 +7,67 @@
     </div>
 
     <form class="quoteForm" id="quoteForm">
-
-      <input class="input" type="text" name="nombre" placeholder="Nombre" required>
-
-      <div class="row">
-        <input class="input" type="email" name="correo" placeholder="Correo electrónico" required>
-        <input class="input" type="tel" name="telefono" placeholder="Teléfono" required>
+      <div class="field">
+        <label>Nombre</label>
+        <input class="input" type="text" name="nombre" placeholder="Nombre Completo" required />
       </div>
 
-      <div class="row">
-        <select class="input" name="servicio" required>
-          <option value="">Servicio de interés</option>
-          <option selected>Renta de equipo de cómputo</option>
-          <option>Soporte TI</option>
-          <option>Redes</option>
-          <option>Seguridad</option>
-        </select>
-        <input class="input" type="date" name="fecha">
+      <div class="field">
+        <label>Empresa</label>
+        <input class="input" type="text" name="empresa" placeholder="Empresa / Negocio" required />
       </div>
 
-      <textarea class="input textarea" name="mensaje" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
+      <div class="field">
+        <label>Teléfono</label>
+        <input class="input" type="tel" name="telefono" placeholder="Ingresa tu Teléfono" required />
+      </div>
+
+      <div class="field">
+        <label>Estado</label>
+        <input class="input" type="text" name="estado" placeholder="Ingresa tu Estado" required />
+      </div>
+
+      <div class="field">
+        <label>Correo</label>
+        <input class="input" type="email" name="correo" placeholder="correo@gmail.com" required />
+      </div>
+
+      <div class="field">
+        <label>Tipo de Plazo</label>
+        <div class="pillGroup" role="group" aria-label="Tipo de plazo">
+          <input type="radio" id="plazoCorto" name="plazo" value="Corto plazo" checked />
+          <label class="pill" for="plazoCorto">Corto Plazo</label>
+
+          <input type="radio" id="plazoLargo" name="plazo" value="Largo plazo" />
+          <label class="pill" for="plazoLargo">Largo Plazo</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿Cuántos empleados tienes en tu equipo de trabajo?</label>
+        <div class="pillGroup" role="group" aria-label="Tamaño del equipo">
+          <input type="radio" id="emp1" name="empleados" value="1-10" checked />
+          <label class="pill" for="emp1">1-10</label>
+
+          <input type="radio" id="emp2" name="empleados" value="11-50" />
+          <label class="pill" for="emp2">11-50</label>
+
+          <input type="radio" id="emp3" name="empleados" value="50-99" />
+          <label class="pill" for="emp3">50-99</label>
+
+          <input type="radio" id="emp4" name="empleados" value="+100" />
+          <label class="pill" for="emp4">+100</label>
+        </div>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" id="agree" required />
+        <span>Estoy de Acuerdo</span>
+      </label>
 
       <button class="btn-primary" style="width:100%;" type="submit">
         Enviar cotización
       </button>
-
     </form>
   </div>
 </div>
-
-<!-- WHATSAPP -->
-<a class="whatsapp"
-   href="https://wa.me/5215500000000?text=Hola%20RD%20Soluciones%20Tecnológicas,%20quiero%20una%20cotización."
-   target="_blank"
-   aria-label="WhatsApp">💬</a>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container footerGrid">
-
-    <div>
-      <h4>RD Soluciones Tecnológicas</h4>
-      <p>
-        Infraestructura, seguridad y renta de equipo de cómputo
-        para empresas que buscan estabilidad y crecimiento.
-      </p>
-    </div>
-
-    <div class="footerLinks">
-      <h4>Secciones</h4>
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="contacto.html">Contacto</a>
-    </div>
-
-    <div>
-      <h4>Contáctanos</h4>
-      <p>WhatsApp: 55 0000 0000</p>
-      <p>Correo: contacto@tudominio.com</p>
-      <p>Ciudad de México</p>
-    </div>
-
-  </div>
-
-  <div class="container footerBottomRow">
-    <div class="copy">
-      © 2026 RD Soluciones Tecnológicas. Todos los derechos reservados.
-    </div>
-
-    <div class="legal">
-      <a href="#">Términos y Condiciones</a>
-      <a href="#">Aviso de Privacidad</a>
-    </div>
-  </div>
-</footer>
-
-<!-- SCRIPT CORRECTO -->
-<script src="css/js/app.js"></script>
-
-</body>
-</html>

@@ -603,3 +603,45 @@ a{ text-decoration:none; color:inherit; }
   position: relative;
   z-index: 10000;
 }
+/* WHY SECTION */
+
+.why{
+  padding:80px 20px;
+  background:#f7f9fc;
+  text-align:center;
+}
+
+.why-title{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.why-sub{
+  max-width:700px;
+  margin:auto;
+  color:#555;
+  margin-bottom:50px;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.why-card{
+  background:white;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.why-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+.why-card h3{
+  margin-bottom:10px;
+}

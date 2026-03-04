@@ -464,3 +464,29 @@ a{ text-decoration:none; color:inherit; }
 .modalOverlay.show{
   display: flex;
 }
+/* ===== FIX: Overlay del modal no debe bloquear clicks cuando está cerrado ===== */
+.modalOverlay{
+  position: fixed;
+  inset: 0;
+  display: none;              /* CLAVE: si está cerrado, no existe para los clics */
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(0,0,0,.55);
+  z-index: 9999;
+}
+
+.modalOverlay.show{
+  display: flex;              /* solo cuando está abierto */
+}
+
+/* Por si tu CSS anterior lo deja “invisible pero encima” */
+.modalOverlay:not(.show){
+  pointer-events: none;
+}
+
+/* Extra: asegurar que el header siempre quede clickeable */
+.header{
+  position: relative;
+  z-index: 10000;
+}

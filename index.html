@@ -75,31 +75,69 @@
       <button class="iconBtn" id="closeQuote" aria-label="Cerrar">✕</button>
     </div>
 
-    <form class="quoteForm">
-      <input class="input" type="text" placeholder="Nombre" required>
+   <form class="quoteForm" id="quoteForm">
+  <div class="field">
+    <label>Nombre</label>
+    <input class="input" type="text" name="nombre" placeholder="Nombre Completo" required>
+  </div>
 
-      <div class="row">
-        <input class="input" type="email" placeholder="Correo electrónico" required>
-        <input class="input" type="tel" placeholder="Teléfono" required>
-      </div>
+  <div class="field">
+    <label>Empresa</label>
+    <input class="input" type="text" name="empresa" placeholder="Empresa / Negocio" required>
+  </div>
 
-      <div class="row">
-        <select class="input" required>
-          <option value="">Servicio de interés</option>
-          <option selected>Renta de equipo de cómputo</option>
-          <option>Soporte TI</option>
-          <option>Redes</option>
-          <option>Seguridad</option>
-        </select>
-        <input class="input" type="date">
-      </div>
+  <div class="field">
+    <label>Teléfono</label>
+    <input class="input" type="tel" name="telefono" placeholder="Ingresa tu Teléfono" required>
+  </div>
 
-      <textarea class="input textarea" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
+  <div class="field">
+    <label>Estado</label>
+    <input class="input" type="text" name="estado" placeholder="Ingresa tu Estado" required>
+  </div>
 
-      <button class="btn-primary" style="width:100%;" type="submit">
-        Enviar cotización
-      </button>
-    </form>
+  <div class="field">
+    <label>Correo</label>
+    <input class="input" type="email" name="correo" placeholder="correo@gmail.com" required>
+  </div>
+
+  <div class="field">
+    <label>Tipo de Plazo</label>
+    <div class="pillGroup" role="group" aria-label="Tipo de plazo">
+      <input type="radio" id="plazoCorto" name="plazo" value="Corto plazo" checked>
+      <label class="pill" for="plazoCorto">Corto Plazo</label>
+
+      <input type="radio" id="plazoLargo" name="plazo" value="Largo plazo">
+      <label class="pill" for="plazoLargo">Largo Plazo</label>
+    </div>
+  </div>
+
+  <div class="field">
+    <label>¿Cuántos empleados tienes en tu equipo de trabajo?</label>
+    <div class="pillGroup" role="group" aria-label="Tamaño del equipo">
+      <input type="radio" id="emp1" name="empleados" value="1-10" checked>
+      <label class="pill" for="emp1">1-10</label>
+
+      <input type="radio" id="emp2" name="empleados" value="11-50">
+      <label class="pill" for="emp2">11-50</label>
+
+      <input type="radio" id="emp3" name="empleados" value="50-99">
+      <label class="pill" for="emp3">50-99</label>
+
+      <input type="radio" id="emp4" name="empleados" value="+100">
+      <label class="pill" for="emp4">+100</label>
+    </div>
+  </div>
+
+  <label class="check">
+    <input type="checkbox" id="agree" required>
+    <span>Estoy de Acuerdo</span>
+  </label>
+
+  <button class="btn-primary" style="width:100%;" type="submit">
+    Enviar cotización
+  </button>
+</form>
   </div>
 </div>
 

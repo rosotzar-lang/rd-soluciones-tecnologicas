@@ -1,98 +1,53 @@
-<!-- MODAL COTIZAR -->
+<!-- MODAL COTIZAR (FINAL) -->
 <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
-
-  <div class="modal" role="dialog" aria-modal="true">
-
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Formulario de cotización">
     <div class="modalHeader">
       <h3>Cotización</h3>
-      <button class="iconBtn" id="closeQuote" type="button">✕</button>
+      <button class="iconBtn" id="closeQuote" type="button" aria-label="Cerrar">✕</button>
     </div>
 
     <form class="quoteForm" id="quoteForm">
-
       <div class="field">
         <label for="nombre">Nombre</label>
-        <input
-          id="nombre"
-          class="input"
-          type="text"
-          name="nombre"
-          placeholder="Nombre Completo"
-          required
-        >
+        <input id="nombre" class="input" type="text" name="nombre" placeholder="Nombre Completo" required>
       </div>
 
       <div class="field">
         <label for="empresa">Empresa</label>
-        <input
-          id="empresa"
-          class="input"
-          type="text"
-          name="empresa"
-          placeholder="Empresa / Negocio"
-          required
-        >
+        <input id="empresa" class="input" type="text" name="empresa" placeholder="Empresa / Negocio" required>
       </div>
 
       <div class="row">
-
         <div class="field">
           <label for="telefono">Teléfono</label>
-          <input
-            id="telefono"
-            class="input"
-            type="tel"
-            name="telefono"
-            placeholder="Ingresa tu Teléfono"
-            required
-          >
+          <input id="telefono" class="input" type="tel" name="telefono" placeholder="Ingresa tu Teléfono" required>
         </div>
 
         <div class="field">
           <label for="estado">Estado</label>
-          <input
-            id="estado"
-            class="input"
-            type="text"
-            name="estado"
-            placeholder="Ingresa tu Estado"
-            required
-          >
+          <input id="estado" class="input" type="text" name="estado" placeholder="Ingresa tu Estado" required>
         </div>
-
       </div>
 
       <div class="field">
         <label for="correo">Correo</label>
-        <input
-          id="correo"
-          class="input"
-          type="email"
-          name="correo"
-          placeholder="correo@gmail.com"
-          required
-        >
+        <input id="correo" class="input" type="email" name="correo" placeholder="correo@gmail.com" required>
       </div>
 
       <div class="field">
         <label>Tipo de Plazo</label>
-
-        <div class="pillGroup">
-
+        <div class="pillGroup" role="group" aria-label="Tipo de plazo">
           <input type="radio" id="plazoCorto" name="plazo" value="Corto plazo" checked>
           <label class="pill" for="plazoCorto">Corto Plazo</label>
 
           <input type="radio" id="plazoLargo" name="plazo" value="Largo plazo">
           <label class="pill" for="plazoLargo">Largo Plazo</label>
-
         </div>
       </div>
 
       <div class="field">
         <label>¿Cuántos empleados tienes en tu equipo de trabajo?</label>
-
-        <div class="pillGroup">
-
+        <div class="pillGroup" role="group" aria-label="Tamaño del equipo">
           <input type="radio" id="emp1" name="empleados" value="1-10" checked>
           <label class="pill" for="emp1">1-10</label>
 
@@ -104,7 +59,6 @@
 
           <input type="radio" id="emp4" name="empleados" value="+100">
           <label class="pill" for="emp4">+100</label>
-
         </div>
       </div>
 
@@ -116,9 +70,161 @@
       <button class="btn-primary" type="submit" style="width:100%;">
         Enviar cotización
       </button>
-
     </form>
-
   </div>
-
 </div>
+
+<!-- CSS FINAL (PÉGALO AL FINAL DE css/estilos.css) -->
+<style>
+  .modalOverlay{
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(0,0,0,.55);
+    z-index: 999999;
+  }
+  .modalOverlay.show{ display:flex; }
+
+  .modal{
+    width: min(860px, 95vw);
+    max-height: 90vh;
+    overflow: auto;
+    background: #fff;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  }
+
+  .modalHeader{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    z-index: 2;
+  }
+
+  .iconBtn{
+    border: 0;
+    background: #fff;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  }
+  .iconBtn:hover{ background: rgba(0,0,0,.04); }
+
+  .quoteForm{ display: grid; gap: 12px; }
+
+  .field label{
+    display:block;
+    font-weight:600;
+    margin-bottom: 6px;
+  }
+
+  .input, select, .textarea{
+    width:100%;
+    box-sizing:border-box;
+    padding: 12px 14px;
+    border-radius: 999px;
+    border: 1px solid #dfe8ff;
+    outline: none;
+  }
+
+  .textarea{
+    border-radius: 18px;
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  .row{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 640px){
+    .row{ grid-template-columns: 1fr; }
+  }
+
+  .pillGroup{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .pillGroup input{ display:none; }
+
+  .pill{
+    border: 1px solid #dfe8ff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor:pointer;
+    user-select:none;
+    font-weight: 600;
+  }
+  .pillGroup input:checked + .pill{
+    background: #eaf1ff;
+    border-color: #2b6cff;
+  }
+
+  .check{
+    display:flex;
+    gap: 10px;
+    align-items:center;
+    padding: 10px 12px;
+    border: 1px solid #dfe8ff;
+    border-radius: 14px;
+  }
+  .check input{ width: 16px; height: 16px; }
+</style>
+
+<!-- JS FINAL (REEMPLAZA TODO css/js/app.js CON ESTO) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const openBtns = document.querySelectorAll(".openQuote");
+  const overlay = document.getElementById("quoteOverlay");
+  const closeBtn = document.getElementById("closeQuote");
+
+  if (!openBtns.length || !overlay || !closeBtn) return;
+
+  const openModal = () => {
+    overlay.classList.add("show");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    overlay.classList.remove("show");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  openBtns.forEach(btn => btn.addEventListener("click", openModal));
+  closeBtn.addEventListener("click", closeModal);
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+
+  const form = document.getElementById("quoteForm");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("¡Listo! Recibimos tu solicitud.");
+      form.reset();
+      closeModal();
+    });
+  }
+});
+</script>

@@ -1,76 +1,124 @@
-<!-- MODAL COTIZAR (ARREGLADO) -->
+<!-- MODAL COTIZAR -->
 <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
+
   <div class="modal" role="dialog" aria-modal="true">
+
     <div class="modalHeader">
       <h3>Cotización</h3>
-      <button class="iconBtn" id="closeQuote" type="button" aria-label="Cerrar">✕</button>
+      <button class="iconBtn" id="closeQuote" type="button">✕</button>
     </div>
 
     <form class="quoteForm" id="quoteForm">
 
       <div class="field">
-        <label>Nombre</label>
-        <input class="input" type="text" name="nombre" placeholder="Nombre Completo" required />
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          class="input"
+          type="text"
+          name="nombre"
+          placeholder="Nombre Completo"
+          required
+        >
       </div>
 
       <div class="field">
-        <label>Empresa</label>
-        <input class="input" type="text" name="empresa" placeholder="Empresa / Negocio" required />
+        <label for="empresa">Empresa</label>
+        <input
+          id="empresa"
+          class="input"
+          type="text"
+          name="empresa"
+          placeholder="Empresa / Negocio"
+          required
+        >
       </div>
 
       <div class="row">
+
         <div class="field">
-          <label>Teléfono</label>
-          <input class="input" type="tel" name="telefono" placeholder="Ingresa tu Teléfono" required />
+          <label for="telefono">Teléfono</label>
+          <input
+            id="telefono"
+            class="input"
+            type="tel"
+            name="telefono"
+            placeholder="Ingresa tu Teléfono"
+            required
+          >
         </div>
 
         <div class="field">
-          <label>Estado</label>
-          <input class="input" type="text" name="estado" placeholder="Ingresa tu Estado" required />
+          <label for="estado">Estado</label>
+          <input
+            id="estado"
+            class="input"
+            type="text"
+            name="estado"
+            placeholder="Ingresa tu Estado"
+            required
+          >
         </div>
+
       </div>
 
       <div class="field">
-        <label>Correo</label>
-        <input class="input" type="email" name="correo" placeholder="correo@gmail.com" required />
+        <label for="correo">Correo</label>
+        <input
+          id="correo"
+          class="input"
+          type="email"
+          name="correo"
+          placeholder="correo@gmail.com"
+          required
+        >
       </div>
 
       <div class="field">
         <label>Tipo de Plazo</label>
-        <div class="pillGroup" role="group" aria-label="Tipo de plazo">
-          <input type="radio" id="plazoCorto" name="plazo" value="Corto plazo" checked />
+
+        <div class="pillGroup">
+
+          <input type="radio" id="plazoCorto" name="plazo" value="Corto plazo" checked>
           <label class="pill" for="plazoCorto">Corto Plazo</label>
 
-          <input type="radio" id="plazoLargo" name="plazo" value="Largo plazo" />
+          <input type="radio" id="plazoLargo" name="plazo" value="Largo plazo">
           <label class="pill" for="plazoLargo">Largo Plazo</label>
+
         </div>
       </div>
 
       <div class="field">
         <label>¿Cuántos empleados tienes en tu equipo de trabajo?</label>
-        <div class="pillGroup" role="group" aria-label="Tamaño del equipo">
-          <input type="radio" id="emp1" name="empleados" value="1-10" checked />
+
+        <div class="pillGroup">
+
+          <input type="radio" id="emp1" name="empleados" value="1-10" checked>
           <label class="pill" for="emp1">1-10</label>
 
-          <input type="radio" id="emp2" name="empleados" value="11-50" />
+          <input type="radio" id="emp2" name="empleados" value="11-50">
           <label class="pill" for="emp2">11-50</label>
 
-          <input type="radio" id="emp3" name="empleados" value="50-99" />
+          <input type="radio" id="emp3" name="empleados" value="50-99">
           <label class="pill" for="emp3">50-99</label>
 
-          <input type="radio" id="emp4" name="empleados" value="+100" />
+          <input type="radio" id="emp4" name="empleados" value="+100">
           <label class="pill" for="emp4">+100</label>
+
         </div>
       </div>
 
       <label class="check">
-        <input type="checkbox" id="agree" required />
+        <input type="checkbox" id="agree" required>
         <span>Estoy de Acuerdo</span>
       </label>
 
-      <button class="btn-primary" style="width:100%;" type="submit">
+      <button class="btn-primary" type="submit" style="width:100%;">
         Enviar cotización
       </button>
+
     </form>
+
   </div>
+
 </div>

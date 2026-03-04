@@ -1,6 +1,6 @@
 (function () {
   // ✅ PON AQUÍ TU WHATSAPP (52 + 10 dígitos)
-  const WHATSAPP_NUM = "5215500000000";
+  const WHATSAPP_NUM = "5215520255290";
 
   const openBtn = document.getElementById("openQuote");
   const overlay = document.getElementById("quoteOverlay");

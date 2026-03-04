@@ -356,3 +356,97 @@ a{ text-decoration:none; color:inherit; }
   margin-top:14px;
   border-radius:14px;
 }
+/* ===== FORM PREMIUM (MODAL COTIZAR) ===== */
+.quoteForm{
+  display:grid;
+  gap:14px;
+}
+
+.quoteForm .field{
+  display:grid;
+  gap:8px;
+}
+
+.quoteForm label{
+  font-weight:700;
+  color:var(--text);
+  font-size:14px;
+}
+
+.quoteForm .input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:#fff;
+  outline:none;
+  font:inherit;
+}
+
+.quoteForm .input:focus{
+  border-color:rgba(11,92,255,.35);
+  box-shadow:0 0 0 4px rgba(11,92,255,.10);
+}
+
+/* Pills (Corto/Largo, 1-10, etc.) */
+.pillGroup{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.pillGroup input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--text);
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+  user-select:none;
+}
+
+.pill:hover{
+  background:rgba(11,92,255,.06);
+  border-color:rgba(11,92,255,.18);
+}
+
+/* seleccionado */
+.pillGroup input:checked + .pill{
+  background:rgba(11,92,255,.12);
+  border-color:rgba(11,92,255,.35);
+  color:var(--blue);
+  box-shadow:0 10px 22px rgba(11,92,255,.10);
+}
+
+/* Checkbox */
+.check{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+.check input{
+  width:18px;
+  height:18px;
+}
+
+/* Responsive modal form */
+@media (max-width:760px){
+  .pillGroup{ gap:8px; }
+  .pill{ padding:10px 12px; }
+}

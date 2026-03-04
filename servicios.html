@@ -20,7 +20,9 @@
       <a href="index.html">Inicio</a>
       <a href="servicios.html" class="active">Servicios</a>
       <a href="contacto.html">Contacto</a>
-      <button id="openQuote" class="btn-primary" style="background:#0b1220;">
+
+      <!-- Botón que abre el modal -->
+      <button id="openQuote" class="btn-primary" type="button" style="background:#0b1220;">
         Cotizar
       </button>
     </nav>
@@ -41,49 +43,54 @@
       <h3>Renta de equipo de cómputo</h3>
       <p>Renta mensual, renovación, soporte y reemplazo opcional.</p>
       <img src="./renta.png" alt="Renta de equipo" class="card-img" />
+      <button type="button" class="btn-primary btn-mini js-open-quote" data-service="Renta de equipo de cómputo" style="background:#0b1220;">
+        Cotizar este servicio
+      </button>
     </article>
 
     <article class="card">
       <h3>Soporte TI</h3>
       <p>Mantenimiento preventivo/correctivo y atención a usuarios.</p>
       <img src="./mantenimiento.png" alt="Soporte TI" class="card-img" />
+      <button type="button" class="btn-primary btn-mini js-open-quote" data-service="Soporte TI" style="background:#0b1220;">
+        Cotizar este servicio
+      </button>
     </article>
-
-    
 
   </div>
 </section>
 
 <!-- MODAL COTIZAR -->
 <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Formulario de cotización">
     <div class="modalHeader">
       <h3>Cotización</h3>
-      <button class="iconBtn" id="closeQuote" aria-label="Cerrar">✕</button>
+      <button class="iconBtn" id="closeQuote" type="button" aria-label="Cerrar">✕</button>
     </div>
 
-    <form class="quoteForm">
-      <input class="input" type="text" placeholder="Nombre" required />
+    <form class="quoteForm" id="quoteForm">
+      <input class="input" name="nombre" type="text" placeholder="Nombre" required />
 
       <div class="row">
-        <input class="input" type="email" placeholder="Correo electrónico" required />
-        <input class="input" type="tel" placeholder="Teléfono" required />
+        <input class="input" name="email" type="email" placeholder="Correo electrónico" required />
+        <input class="input" name="telefono" type="tel" placeholder="Teléfono" required />
       </div>
 
       <div class="row">
-        <select class="input" required>
+        <select class="input" name="servicio" id="serviceSelect" required>
           <option value="">Servicio de interés</option>
-          <option selected>Renta de equipo de cómputo</option>
+          <option>Renta de equipo de cómputo</option>
           <option>Soporte TI</option>
           <option>Redes</option>
           <option>Seguridad</option>
         </select>
-        <input class="input" type="date" />
+        <input class="input" name="fecha" type="date" />
       </div>
 
-      <textarea class="input textarea" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
+      <textarea class="input textarea" name="mensaje" placeholder="¿Qué podemos hacer para ayudarte?" required></textarea>
 
-      <button class="btn-primary" style="width:100%;" type="submit">
+      <!-- Botón submit REAL -->
+      <button class="btn-primary" type="submit" style="background:#0b1220;">
         Enviar cotización
       </button>
     </form>
@@ -94,6 +101,7 @@
 <a class="whatsapp"
    href="https://wa.me/5215500000000?text=Hola%20RD%20Soluciones%20Tecnológicas,%20quiero%20una%20cotización."
    target="_blank"
+   rel="noopener"
    aria-label="WhatsApp">💬</a>
 
 <!-- FOOTER -->

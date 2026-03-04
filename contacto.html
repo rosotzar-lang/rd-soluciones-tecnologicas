@@ -1,4 +1,181 @@
-<!-- MODAL COTIZAR (FINAL) -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | RD Soluciones Tecnológicas</title>
+
+  <link rel="icon" href="logo.png">
+
+  <!-- Si tu CSS externo existe, lo toma. Si no, NO pasa nada porque abajo va el CSS del modal -->
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- CSS del MODAL (forzado) para que SIEMPRE se vea bien aunque no cargue estilos.css -->
+  <style>
+    .modalOverlay{
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: rgba(0,0,0,.55);
+      z-index: 999999;
+    }
+    .modalOverlay.show{ display:flex; }
+
+    .modal{
+      width: min(860px, 95vw);
+      max-height: 90vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .modalHeader{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      z-index: 2;
+    }
+
+    .iconBtn{
+      border: 0;
+      background: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    }
+    .iconBtn:hover{ background: rgba(0,0,0,.04); }
+
+    .quoteForm{ display: grid; gap: 12px; }
+
+    .field label{
+      display:block;
+      font-weight:600;
+      margin-bottom: 6px;
+    }
+
+    .input, select, .textarea{
+      width:100%;
+      box-sizing:border-box;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid #dfe8ff;
+      outline: none;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 640px){
+      .row{ grid-template-columns: 1fr; }
+    }
+
+    .pillGroup{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pillGroup input{ display:none; }
+
+    .pill{
+      border: 1px solid #dfe8ff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor:pointer;
+      user-select:none;
+      font-weight: 600;
+    }
+    .pillGroup input:checked + .pill{
+      background: #eaf1ff;
+      border-color: #2b6cff;
+    }
+
+    .check{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border: 1px solid #dfe8ff;
+      border-radius: 14px;
+    }
+    .check input{ width: 16px; height: 16px; }
+
+    /* Botón azul si tu CSS externo no carga */
+    .btn-primary{
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      background: #0b55ff;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="RD Soluciones Tecnológicas">
+    </a>
+
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html" class="active">Contacto</a>
+
+      <!-- IMPORTANTE: openQuote para que el JS lo detecte -->
+      <button class="btn-primary openQuote" type="button" style="background:#0b1220;">
+        Cotizar
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Contacto</h1>
+    <p>Escríbenos y te respondemos rápido.</p>
+  </div>
+</section>
+
+<section class="container" style="padding-bottom:80px;">
+  <div class="grid">
+    <article class="card">
+      <h3>WhatsApp</h3>
+      <p>55 0000 0000</p>
+    </article>
+
+    <article class="card">
+      <h3>Correo</h3>
+      <p>contacto@tudominio.com</p>
+    </article>
+
+    <article class="card">
+      <h3>Horario</h3>
+      <p>Lun–Vie 9:00 a 18:00</p>
+    </article>
+  </div>
+</section>
+
+<!-- MODAL COTIZAR -->
 <div class="modalOverlay" id="quoteOverlay" aria-hidden="true">
   <div class="modal" role="dialog" aria-modal="true" aria-label="Formulario de cotización">
     <div class="modalHeader">
@@ -74,157 +251,65 @@
   </div>
 </div>
 
-<!-- CSS FINAL (PÉGALO AL FINAL DE css/estilos.css) -->
-<style>
-  .modalOverlay{
-    position: fixed;
-    inset: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    background: rgba(0,0,0,.55);
-    z-index: 999999;
-  }
-  .modalOverlay.show{ display:flex; }
+<!-- WHATSAPP -->
+<a class="whatsapp"
+   href="https://wa.me/5215500000000?text=Hola%20RD%20Soluciones%20Tecnológicas,%20quiero%20una%20cotización."
+   target="_blank"
+   rel="noopener"
+   aria-label="WhatsApp">💬</a>
 
-  .modal{
-    width: min(860px, 95vw);
-    max-height: 90vh;
-    overflow: auto;
-    background: #fff;
-    border-radius: 18px;
-    padding: 18px;
-    box-shadow: 0 20px 60px rgba(0,0,0,.25);
-  }
+<footer class="footer">
+  <div class="container footerGrid">
+    <div>
+      <h4>RD Soluciones Tecnológicas</h4>
+      <p>Infraestructura, seguridad y renta de equipo de cómputo para empresas.</p>
+    </div>
+  </div>
+</footer>
 
-  .modalHeader{
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    background: #fff;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    z-index: 2;
-  }
-
-  .iconBtn{
-    border: 0;
-    background: #fff;
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 18px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  }
-  .iconBtn:hover{ background: rgba(0,0,0,.04); }
-
-  .quoteForm{ display: grid; gap: 12px; }
-
-  .field label{
-    display:block;
-    font-weight:600;
-    margin-bottom: 6px;
-  }
-
-  .input, select, .textarea{
-    width:100%;
-    box-sizing:border-box;
-    padding: 12px 14px;
-    border-radius: 999px;
-    border: 1px solid #dfe8ff;
-    outline: none;
-  }
-
-  .textarea{
-    border-radius: 18px;
-    min-height: 110px;
-    resize: vertical;
-  }
-
-  .row{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  @media (max-width: 640px){
-    .row{ grid-template-columns: 1fr; }
-  }
-
-  .pillGroup{
-    display:flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .pillGroup input{ display:none; }
-
-  .pill{
-    border: 1px solid #dfe8ff;
-    padding: 8px 14px;
-    border-radius: 999px;
-    cursor:pointer;
-    user-select:none;
-    font-weight: 600;
-  }
-  .pillGroup input:checked + .pill{
-    background: #eaf1ff;
-    border-color: #2b6cff;
-  }
-
-  .check{
-    display:flex;
-    gap: 10px;
-    align-items:center;
-    padding: 10px 12px;
-    border: 1px solid #dfe8ff;
-    border-radius: 14px;
-  }
-  .check input{ width: 16px; height: 16px; }
-</style>
-
-<!-- JS FINAL (REEMPLAZA TODO css/js/app.js CON ESTO) -->
+<!-- JS del MODAL (forzado) para que SIEMPRE funcione aunque no cargue app.js -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const openBtns = document.querySelectorAll(".openQuote");
-  const overlay = document.getElementById("quoteOverlay");
-  const closeBtn = document.getElementById("closeQuote");
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtns = document.querySelectorAll(".openQuote");
+    const overlay = document.getElementById("quoteOverlay");
+    const closeBtn = document.getElementById("closeQuote");
 
-  if (!openBtns.length || !overlay || !closeBtn) return;
+    if (!openBtns.length || !overlay || !closeBtn) return;
 
-  const openModal = () => {
-    overlay.classList.add("show");
-    overlay.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  };
+    const openModal = () => {
+      overlay.classList.add("show");
+      overlay.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
 
-  const closeModal = () => {
-    overlay.classList.remove("show");
-    overlay.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  };
+    const closeModal = () => {
+      overlay.classList.remove("show");
+      overlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
 
-  openBtns.forEach(btn => btn.addEventListener("click", openModal));
-  closeBtn.addEventListener("click", closeModal);
+    openBtns.forEach(btn => btn.addEventListener("click", openModal));
+    closeBtn.addEventListener("click", closeModal);
 
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) closeModal();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
-  });
-
-  const form = document.getElementById("quoteForm");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("¡Listo! Recibimos tu solicitud.");
-      form.reset();
-      closeModal();
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeModal();
     });
-  }
-});
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    const form = document.getElementById("quoteForm");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("¡Listo! Recibimos tu solicitud.");
+        form.reset();
+        closeModal();
+      });
+    }
+  });
 </script>
+
+</body>
+</html>
